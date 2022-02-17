@@ -1,0 +1,292 @@
+
+* {
+    box-sizing: border-box;
+    font-family: "Gill Sans", sans-serif;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased!important;
+    -moz-osx-font-smoothing: grayscale!important;
+    text-rendering: optimizeLegibility!important;
+}
+.label-shape
+{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #2c2302;
+    cursor: pointer;
+    }
+    
+    .input-shape
+    {
+    font-style: normal;
+    font-weight: 500  !important;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    margin: 0;
+    padding: 10px 16px;
+    border: 2px solid #cfcec8;
+    border-radius: 8px;
+    color: #444;     
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition-duration: .2s;
+    height :  45px;
+    transition-property: border-color,box-shadow;
+}
+.input-shape:hover
+    {
+    border: 3px solid #a6a5a1  !important;
+}
+.card-shape
+{
+    border: 2px solid #eae9e3;
+    border-radius: 8px;
+    transition-property: border-color,box-shadow;
+    box-shadow: 0 0 #acbef7;
+    transition-duration: .2s;
+    width: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, menu, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%; 
+    font-family:'Muli', Arial, sans-serif !important;
+    font: inherit;
+    vertical-align: baseline;
+}
+button {
+    text-align: center;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    z-index: 9;
+    background-color: #00a898;
+    border :  none;
+    border-radius :5px; 
+    padding-left: 5px;
+    padding-right: 5px;
+    width : 120%; 
+    height :45px;
+    color : #fff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Muli', Arial, sans-serif; 
+    color :  #fff; 
+    font-size: 20px
+
+}
+#option {
+    height : 150px; 
+    background-color : #fff;
+    width :250px;
+    border : 1px solid #444; 
+}
+Link{ 
+    text-decoration :none;
+}
+p{
+    color : #4F4F4F   ;
+    font-family: 'Muli', Arial, sans-serif;
+    font-size: 18px;
+}
+
+
+
+/*****Grid system *****/
+
+.grid-main
+{
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-height: calc(100% - 50px);
+    margin: 0 auto;
+}
+
+.grid-main-form
+{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    min-height: calc(100% - 50px);
+    margin: 0 auto;
+}
+.form
+{   
+    padding: 50px;
+}
+
+.grid-wrapper
+{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: calc(100% - 50px);
+    margin: 0 auto;
+
+}
+/*grid-3*/
+.options-grid-3{
+    display :  grid; 
+    gap : 8px; 
+    padding : 0.5rem;
+    grid-template-columns: repeat( 2, 1fr);
+}
+
+@media (min-width: 720px) {
+    .options-grid{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat( 3, 1fr);
+    }
+}
+@media (max-width: 420px) {
+    .options-grid{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat( 1, 1fr);
+    }
+}
+/*finish grid*/
+/*grid-3*/
+.options-grid-3{
+    display :  grid; 
+    gap : 8px; 
+    padding : 0.5rem;
+    grid-template-columns: repeat( 2, 1fr);
+}
+
+@media (min-width: 720px) {
+    .options-grid-3{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat( 3, 1fr);
+    }
+}
+@media (max-width: 420px) {
+    .options-grid-3{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat( 1, 1fr);
+    }
+}
+/*finish grid*/
+
+.options-grid-2{
+    display :  grid; 
+    gap : 8px; 
+    padding : 0.5rem;
+    grid-template-columns: repeat( 2, 1fr);
+}
+
+@media (min-width: 720px) {
+    .options-grid-2{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media (max-width: 570px) {
+    .options-grid-2{
+        display :  grid; 
+        gap : 1rem; 
+        grid-template-columns: repeat( 1, 1fr);
+    }
+
+}
+
+.grid-shape > div {
+    border :  2px solid #e0dfda;
+    border-radius :8px;
+    transition: border 0.2s ease-in-out;
+
+}
+.grid-shape > div:hover{
+    border: 2px solid #a6a5a1;
+}
+.option 
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 28px 5% 16px;
+    border: 2px solid #eae9e3;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    transition-duration: .2s;
+    height :  200px;
+    background-color: #444;
+
+}
+
+
+
+@media (max-width: 720px) {
+    body{
+    background : #f4f3ff ;    
+}
+}
+
+.shadow_box
+{
+    box-shadow: -1px 2px 30px -1px rgba(186,186,186,0.47) !important;
+-webkit-box-shadow: -1px 2px 30px -1px rgba(186,186,186,0.47) !important;
+-moz-box-shadow: -1px 2px 30px -1px rgba(186,186,186,0.47) !important;
+border-radius:  15px; 
+border: 2px solid #deddd9 ;  
+    padding: 15px;
+    background :  #fff; 
+
+}
+
+
+
+
+/* Navbar  */
+
+
+.retour-btn{
+    border-radius: 15px;
+    border: 2px solid #deddd9;  
+    background : #fff; 
+    transition-duration: .2s;
+    color : #444;
+    font-family: "Gill Sans", sans-serif ;
+
+}
+.retour-btn:hover{
+    border-radius: 15px;
+    border: 2px solid #00a898;  
+    background : #00a898; 
+    color :  #fff;
+    
+}
+.nav-box
+{
+    -webkit-box-shadow: 0px 12px 30px -9px rgba(0,0,0,0.14); 
+    box-shadow: 0px 12px 30px -9px rgba(0,0,0,0.14);
+    background : #fff;  
+}
+    
+
+
+
+
+    /*input set up*/
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: all 5000s ease-in-out 0s;
+            transition-property: background-color, color;
+        }
