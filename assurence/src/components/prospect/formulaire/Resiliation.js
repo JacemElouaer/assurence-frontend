@@ -11,30 +11,32 @@ function Resiliation() {
      dispatch(saveProgress(75))
   }, []);
   const data   =  useSelector(state => state.FormReducer)
-  console.log(data.resiliation)
 
 
 
   let  bresiliation =  "oui"
-  if(data.resiliation){
-    bresiliation =  data.resiliation  }
+  if(data.resiliation !=="") {
+    bresiliation =  data.resiliation ===false ?  "non"  :  "oui" 
+   }
 
   const dispatch =  useDispatch()
-  let [resiliation ,  setresiliation] =  useState(bresiliation) 
+  let [resiliation ,  setresiliation] =  useState(bresiliation)  
 
  const change= (e)=> {
    
      if (e.target.id === "oui"){
-      setresiliation(resiliation="oui")
+      setresiliation("oui")
     } 
     
-      if(e.target.id ===  "nom"){
-      setresiliation(resiliation="nom")
+      if(e.target.id ===  "non"){
+      setresiliation("non")
       }
  };
  
- const senddata=()=>{
-   dispatch(saveResiliation(resiliation))
+ const senddata=()=>{ 
+   let  resilier = resiliation ==="oui"?  true :  false 
+   
+   dispatch(saveResiliation(resilier))
 
  }
   
@@ -50,15 +52,15 @@ function Resiliation() {
         <div onClick={change} id="oui"> 
         <GridbinaryOption id="oui" type="oui"  choix={resiliation} option_text="Oui, résilier mon ancien contrat"/>
         </div>
-        <div onClick={change} id="nom">
-        <GridbinaryOption id="nom" type="non"  choix={resiliation} option_text="Non, pas besoin"/>
+        <div onClick={change} id="non">
+        <GridbinaryOption id="non" type="non"  choix={resiliation} option_text="Non, pas besoin"/>
         </div>
         </div>
       </main>
       
-      <div class="  mt-16  flex justify-center "  onClick={senddata}>
+      <div className="  mt-16  flex justify-center "  onClick={senddata}>
 
-        {resiliation === "oui"? 
+        {resiliation ? 
             <Button Suivant="ChangerAssurance" />: 
             <Button Suivant="EmailFormulaire" />
       }

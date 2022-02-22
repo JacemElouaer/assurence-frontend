@@ -11,7 +11,9 @@ export const  SAVE_DEPENDANCE_MAISON = "SAVE_DEPENDANCE_MAISON"
 export const  SAVE_PROGRESS ="SAVE_PROGRESS"  
 export const  SAVE_MAISON_DETAIL = "SAVE_MAISON_DETAIL"
 export const  SAVE_PROSPECTINFO = "SAVE_PROSPECTINFO"
-
+export const  SAVE_BESOIN_RES =  "SAVE_BESOIN_RES"
+export const  SAVE_RESOLUTION_PERI = "SAVE_RESOLUTION_PERI" 
+export const  SAVE_PROSPECT =  "SAVE_PROSPECT";  
 
 
 export function saveAdress(adresse){
@@ -75,10 +77,10 @@ export function saveAppartSpecification(appartspecification){
     }
 }
 
-export function  saveMaisonDetail (datailMaison){
+export function  saveMaisonDetail (detailMaison){
     return  {
         type : "SAVE_MAISON_DETAIL" , 
-        datailMaison
+        detailMaison
     }
 }
 
@@ -90,9 +92,32 @@ export function  saveProgress(progress){
 } 
 
 
-export function saveProspectInfo(prospectInfo){
+export function saveProspectInfo(prospect){
+    console.log('step1')
     return  {
         type : "SAVE_PROSPECTINFO" , 
-        prospectInfo
+        prospect
+    }
+} 
+export  function saveProspect(email ,  daten) 
+{
+    console.log(email ,  daten) 
+    return  {
+        type :  "SAVE_PROSPECT", 
+        email, 
+        daten, 
+    }
+}
+
+export function  saveBesoinRes(besoinres){
+    return  {
+        type :"SAVE_BESOIN_RES" , 
+        besoinres
+    }
+}
+export function  saveResiliationPeriode(ResiliationP){
+    return  {
+        type :  "SAVE_RESOLUTION_PERI",
+        ResiliationP
     }
 }

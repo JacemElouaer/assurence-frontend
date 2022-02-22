@@ -4,12 +4,6 @@ class  GridOption extends Component {
 
 
 
-constructor(props) {
-    super(props);
-    this.setState({ 
-
-    })
-}
 componentDidUpdate(props){ 
   if (this.props.choix===props.id) {
     document.getElementById(props.id).style.borderColor = "#00a898";
@@ -27,13 +21,14 @@ componentDidMount(){
 }
 render(){
   return (      
-<div  className="flex flex-col mb-2   text-center  justify-center w-4/4 xs:w-36 md:w-44 items-center focus:outline-none relative mx-auto" style={{ pointerEvents:"none"}}
+<div  className="flex flex-col mb-2   text-center  justify-center w-4/4 xs:w-36 h-40 md:w-44 items-center focus:outline-none relative mx-auto" style={{ pointerEvents:"none"}}
   id= {this.props.id}>
+    {this.props.src ?
       <div className="flex justify-center  mx-auto  items-end mb-1 h-110 w-full" style={{ pointerEvents:"none"}}>
-      <img   src={this.props.src} alt="logo" className=" h-20"  style={{ pointerEvents:"none"}}/>
-      </div>
+         <img   src={this.props.src} alt="logo" className=" h-20"  style={{ pointerEvents:"none"}}/> 
+      </div>:  undefined}
       <div className="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans" 
-      style={{ pointerEvents:"none"}}><p className="text-10" style={{ pointerEvents:"none"}}>{this.props.text_option}</p></div>
+      style={{ pointerEvents:"none"}}><p className="text-4" style={{ pointerEvents:"none"}}>{this.props.text_option}</p></div>
   <div
     className="absolute top-4 right-4    w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
      id={`check${this.props.id}`}>

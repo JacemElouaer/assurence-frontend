@@ -3,32 +3,66 @@ import Button from "../../utils/Button";
 import BinaryOption from  '../../utils/binaryOption'
 import SelectLabels from '../../utils/SelectLabels'
 import  {saveProgress} from '../../../redux/actions/formsData'
-import {useDispatch} from  'react-redux'
+import {saveResiliationPeriode} from '../../../redux/actions/formsData' ; 
+import {useDispatch ,  useSelector} from  'react-redux'
 
+let option   =  ["Janvier" , "Fevrier" ,  "Mars" ,  "Avril" ,  "Mai" , "Join" , "Juillet" ,  "Aout" , "Septembre" , "Octobre", "Novembre ", "Decembre"]
+ 
 function ResiliationPeriod() { 
   const dispatch =  useDispatch()
+  
+  
+  const d = new Date();
+  let mois_courant = d.getMonth() === 11 ?  0  : d.getMonth()+1 ; 
+  let year_courant  = d.getFullYear()
   
   useEffect(() => {
      dispatch(saveProgress(95))
   }, []);
-  let [choix ,  setChoix] =  useState("option_1") 
+  let data =  useSelector(state=> state.FormReducer)
+let bchoix =data.ResiliationP ?   data.ResiliationP.periode:  ""
+let bdate =  data.ResiliationP ?   data.ResiliationP.dateres :  ""
+
+  let [periode ,  setChoix] =  useState(bchoix) 
+  let [date_res ,  setDateRes] = useState(bdate)
+
+  let [month ,  setMonth] =  useState("")
+  let [year ,  setYear] =  useState("") 
+
+
+  const changeResdate=(m , y)=>{
+    setMonth(m)
+    setYear(y) 
+    setDateRes(`01/${m}/${y}`)    
+  }
+
+ useEffect(() => {
+   
+  if(periode==="Plus de 12 mois"){
+    setDateRes(`01/${option[mois_courant]}/${year_courant}`)
+  } 
+  else{
+    setDateRes(`01/${option[month]}/${year}`)
+  }
+  console.log(date_res.split('/')[1])
+})
 
  const change= (e)=> {
-     if (e.target.id === "option_1"){
-      setChoix(choix="option_1")
+    if (e.target.id === "Moin de 12 mois"){
+      setChoix(periode="Moin de 12 mois")
     } 
-    
-      if(e.target.id ===  "option_2"){
-      setChoix(choix="option_2")
-      }
-      console.log(choix);
+    if(e.target.id ===  "Plus de 12 mois"){
+      setChoix(periode="Plus de 12 mois")
+      } 
+      
  };
- function  changeResdate(){
-   
- }
- function  changeM(){
+ 
+ const senddata = (e)=>{
+  e.preventDefault() ;
+  dispatch(saveResiliationPeriode({periode ,  date_res}))
+}
 
- }
+
   
   return (
     <div className="mt-1">
@@ -42,33 +76,32 @@ function ResiliationPeriod() {
       </div>
       <main className="flex justify-center mt-16">
         <div className="grid grid-cols-1  2xs:grid-cols-2   s:grid-cols-2 gap-5 grid-shape"  >
-        <div onClick={change} id="option_1"> 
-        <BinaryOption id="option_1" type="oui" text="type_1" choix={choix} option_text="Moin de 12 mois"/>
+        <div onClick={change} id="Moin de 12 mois"> 
+        <BinaryOption id="Moin de 12 mois" type="oui" text="type_1" choix={periode}  option_text="Moin de 12 mois"/>
         </div>
-        <div onClick={change} id="option_2">
-        <BinaryOption id="option_2" type="non" text="type_1" choix={choix} option_text= "Plus de 12 mois" />
+        <div onClick={change} id="Plus de 12 mois">
+        <BinaryOption id="Plus de 12 mois" type="non" text="type_1" choix={periode} option_text= "Plus de 12 mois" />
         </div>
         </div>
       </main>
-      {choix==="option_1"?
+      {periode==="Moin de 12 mois"?
        <div className="mt-8"> 
  
        <div className="flex  justify-center mx-auto  mt-5">     
-       <SelectLabels chnageMois={changeM} setResDate = {changeResdate} /></div>
+       <SelectLabels  setResDate = {changeResdate} mois={bdate.split('/')[1]}  /></div>
+       {date_res !== "" ?      
        <div class="shadow_box mt-4 text-16 text-default-grey-400 font-sans w-600" >
-       
-       
-       <p>Parfait! La date d’effet de votre contrat sera fixée au 8 avril 2022 pour prendre en compte la résiliation de votre ancien contrat.
+ <p>Parfait! La date d’effet de votre contrat sera fixée au 01 {option[month]} {year} pour prendre en compte la résiliation de votre ancien contrat.
            <br/>Si nécessaire, vous pourrez modifier cette date ultérieurement.</p>
-           </div>
-           
+           </div> :  undefined}
+       
        </div>
        :  <div class="shadow_box mt-8 text-16 text-default-grey-400 font-sans w-600" >
-       <p>Parfait! La date d’effet de votre contrat sera fixée au 8 avril 2022 pour prendre en compte la résiliation de votre ancien contrat.
+       <p>Parfait! La date d’effet de votre contrat sera fixée au 01  {option[mois_courant]} {year_courant} pour prendre en compte la résiliation de votre ancien contrat.
            <br/>Si nécessaire, vous pourrez modifier cette date ultérieurement.</p>
            </div>
     }
-      <div class="mt-16">
+      <div class="mt-16" onClick={senddata}>
       
       <Button Suivant="EmailFormulaire" />
       </div>

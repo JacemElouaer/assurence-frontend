@@ -5,6 +5,18 @@ import {useDispatch ,  useSelector}  from 'react-redux';
 import  {savenombresinistre}  from '../../../redux/actions/formsData'
 import  {saveProgress} from '../../../redux/actions/formsData'
 
+let  valuesin = {
+  "Aucun": 0,  
+  "Un" : 33 , 
+  "Deux" : 66  , 
+  "Trois ou plus" :  1000
+}
+let  choice_map = {
+  0 : "Aucun",  
+  33 :  "Un", 
+  66 :  "Deux", 
+  100 :  "Trois ou plus"
+}
 
 function NombreSinistre() {
   
@@ -18,7 +30,6 @@ const dispatch =  useDispatch()
 let [sinistre ,  setSinistre]=  useState(data.nbrsinistre)
 let [show ,  setShow]=  useState(false)
 
-console.log(sinistre)
 const  senddata= (e)=>{
   e.preventDefault();
   dispatch(savenombresinistre(sinistre))
@@ -35,9 +46,11 @@ const changenbsinistre= (value) =>{
 }
   let choix= [
     { value: 0,
-      label:"Aucun",}, {
+      label:"Aucun"
+    },
+    {
       value: 33,
-      label: 'Un',
+      label: 'Un'
     },
     {
       value: 66,
@@ -59,7 +72,7 @@ const changenbsinistre= (value) =>{
    
     <div class="md:mb-2 mb-0">
       <div class=" items-center mx-auto w-full ">
-        <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre}  default_value={sinistre}/>
+        <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={sinistre}/>
       </div> 
     </div>
 

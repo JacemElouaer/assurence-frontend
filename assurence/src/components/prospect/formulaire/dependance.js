@@ -12,9 +12,11 @@ function Dependance() {
 const data =  useSelector(state => state.FormReducer)
 
 let bsurface = data.dependance ?  data.dependance.surface
-   : undefined ; 
-let bexist = data.dependance ?  data.dependance.exist
-   : undefined ; 
+   : undefined ;  
+   let  bexist  = "Non";  
+if  (data.dependance) {
+  bexist =  data.dependance.exist ?  "Oui" :  "Non";  
+   } 
 
    
    useEffect(() => {
@@ -29,11 +31,23 @@ const dispatch =  useDispatch()
 let [exist ,  setExist ] =  useState(bexist)
 let [surface ,  setSurface ] =  useState(bsurface)
 
+const  changeDep = (e)=> {
+  e.preventDefault() 
+  if(e.target.value ==="Oui") {
+    setExist("Oui")
+  } else {
+    setExist("Non") 
+    setSurface(null)
+  }
+}
 
 function  senddata(e){
-  e.preventDefault() ;
-  if(surface!=="" && exist){
-   dispatch(saveDependance({exist ,  surface}))
+  e.preventDefault() ; 
+  let  ex =  false ; 
+  if(surface!=="" && exist){ 
+    ex = exist==="Oui"? true :  false;  
+     
+   dispatch(saveDependance({exist:  ex ,  surface}))
   } 
 } 
 
@@ -61,7 +75,7 @@ function  senddata(e){
                   <div class="flex justify-center mx-auto lg:gap-x-11 flex-wrap h-full">
                     
                   <RadioGroup
-                  onChange={(e)=>setExist(e.target.value)}
+                  onChange={changeDep}
                   row
                   value={exist}
                   aria-labelledby="demo-form-control-label-placement"
@@ -86,7 +100,7 @@ function  senddata(e){
                 </div> 
               </div>
      
-{exist === "Oui" ? 
+{exist ==="Oui" ? 
               <div class="flex items-center  mx-auto text-center flex-col" id="choix_surface">
               <div class="mb-5 max-w-940 xl:max-w-full">
                 De quelle superficie ?</div>
@@ -110,14 +124,14 @@ function  senddata(e){
                   <FormControlLabel
                     value="medium"
                     control={<StyledRadio/>}
-                    label="21 m à 100 m "
+                    label="21 m à 100 m"
                     labelPlacement="top"
                   />
                    <FormControlLabel
                     value="big"
                     
                     control={<StyledRadio/>}
-                    label="plus de 100 m  "
+                    label="plus de 100 m"
                     labelPlacement="top"
                   />
                   </RadioGroup>

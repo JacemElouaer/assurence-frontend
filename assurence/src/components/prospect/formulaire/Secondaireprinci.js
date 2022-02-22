@@ -27,11 +27,9 @@ function Secondaireprincipale() {
  const change= (e)=> {
     if (e.target.id === 'Principale'){
       setChoix("Principale") 
-      console.log(PropSecond)
     }
     if(e.target.id ===  "Secondaire") {
       setChoix("Secondaire")
-      console.log(PropSecond)
     }
  };
 

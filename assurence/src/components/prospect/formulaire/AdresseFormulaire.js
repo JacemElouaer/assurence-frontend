@@ -3,11 +3,10 @@ import Button from "../../utils/Button"
 import {saveAdress } from '../../../redux/actions/formsData' 
 import {useDispatch,  useSelector}  from  'react-redux';
 import  {saveProgress} from '../../../redux/actions/formsData' 
-import {Link}  from 'react-router-dom'
 import EmmaBull from '../../utils/EmmaBull'
 
 
-function AdresseFormulaire(props) {
+function AdresseFormulaire() {
   const dispatch =  useDispatch() 
   
   useEffect(() => {

@@ -10,11 +10,9 @@ constructor(props) {
   }
 }
 shouldComponentUpdate(prevState , nextState) {
-  console.log("workings")
   return  true;
 }
 componentDidUpdate() {
-  console.log("updating")
     if ((this.props.choix).includes(this.props.id)) {
     document.getElementById(this.props.id).style.borderColor = "#00a898";
     document.getElementById(`check${this.props.id}`).style.display = "block";
@@ -24,7 +22,6 @@ componentDidUpdate() {
     }
 }
 componentDidMount(){ 
-   console.log(this.props.choix)
   if ((this.props.choix).includes(this.props.id)) {    
     document.getElementById(this.props.id).style.borderColor = "#00a898";
     document.getElementById(`check${this.props.id}`).style.display = "block";

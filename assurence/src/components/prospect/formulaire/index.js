@@ -15,8 +15,17 @@ import NombreSinistre from "./NombreSinistre";
 import EmailFormulaire from "./EmailFormulaire";
 import ComplementAdresse from "./ComplementAdresse";
 import SpecificationMaison from "./SpecificationMaison";
-import DetailMaison from "./DetailMaison";
+import DetailMaison from "./DetailMaison"; 
+import NiveauImmeuble from "./parcourImeuble/NiveauImmeuble"
+import NatureImmeuble from "./parcourImeuble/NatureImmeuble"  
+import Niveausous_sol from  './parcourImeuble/Niveausous_sol'  
+import Parking from  './parcourImeuble/Parking' 
+import PeriodConstruction from  './parcourImeuble/PeriodConstruction' 
+import ImeubleProp from './parcourImeuble/ImeubleProp'  
+import UsageImmeuble from  './parcourImeuble/UsageImmeuble'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FormulaireImmeuble from './parcourImeuble/index'
+import InstallationImeuble from './parcourImeuble/InstallationImeuble'
 import Navbar from "../../utils/Navbar";
 
 const FormulaireIndex = () => {
@@ -27,9 +36,19 @@ const FormulaireIndex = () => {
         <div className=" flex flex-row justify-between justify-content  mx-auto  ">
           <div className="w-full h-full">
             <div className="flex flex-col items-center justify-center py-14  ">
-              <div className="flex flex-col px-5 md:px-0  pt-72px md:pt-28">
-                <div className="flex justify-center mx-auto ">
+              <div className="md:pt-28">
+                <div className=" ">
                   <Routes>
+                  <Route  path="Immeuble" element={<FormulaireImmeuble/>}> 
+                      <Route  path="NiveauImmeuble" element={<NiveauImmeuble />} />
+                      <Route  path="NatureImmeuble" element={<NatureImmeuble />} />
+                      <Route  path="Niveausous_sol" element={<Niveausous_sol />} />
+                      <Route  path="Parking" element={<Parking />} />
+                      <Route  path="PeriodConstruction" element={<PeriodConstruction />} />
+                      <Route  path="ImeubleProp" element={<ImeubleProp />} />
+                      <Route  path="InstallationImeuble" element={<InstallationImeuble />} />
+                      <Route  path="UsageImmeuble" element={<UsageImmeuble/>} />
+                      </Route>
                     <Route
                       path="Adresse"
                       element={<AdresseFormulaire />}
@@ -88,6 +107,7 @@ const FormulaireIndex = () => {
                       path="DetailMaison"
                       element={<DetailMaison />}
                     ></Route>
+                    
                   </Routes>
                 </div>
               </div>

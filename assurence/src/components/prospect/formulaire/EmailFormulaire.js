@@ -3,18 +3,24 @@ import Button from "../../utils/Button";
 import {
   saveProgress,
   saveProspectInfo,
-} from "../../../redux/actions/formsData";
+  saveProspect
+} from "../../../redux/actions/formsData"; 
+import {save_prospect ,  save_devis} from  '../../../Apis/api' 
+import  {generateUID} from  '../../../Apis/_DATA'
 import { useDispatch, useSelector } from "react-redux";
 function EmailFormulaire() {
   const data = useSelector((state) => state.FormReducer);
 
-  let bemail = data.prospectInfo ? data.prospectInfo.Email : "";
-  let bbirthdate = data.prospectInfo ? data.prospectInfo.birthdate: "";
-
+  let bemail = data.prospect ? data.prospect.Email : "";
+  let bbirthdate = data.prospect ? data.prospect.birthdate: "";
+  let adresse =  data.adresse ; 
+  let Generalinfo  =  data.generalinfo
   let [Email, setEmail] = useState(bemail);
-  let [birthdate, setBirthdate] = useState(bbirthdate);
+  let [birthdate, setBirthdate] = useState(bbirthdate); 
+  
 
-  const handleChange = (e) => {
+
+  const handleChange = (e) => { 
     setEmail(e.target.value);
   };
   const handleChangeBirth = (e) => {
@@ -26,10 +32,22 @@ function EmailFormulaire() {
     dispatch(saveProgress(100));
   }, []);
 
+
+
+
   const senddata = (e) => {
-    e.preventDefault();
-    dispatch(saveProspectInfo({ Email, birthdate }));
+    console.log("this is going to save data ") 
+    dispatch(saveProspect(Email,   birthdate)); 
+    console.log("this is done")
+    let  nom =  Generalinfo.nom 
+    let prenom =  Generalinfo.prenom
+    let  adr  =  adresse.adresse 
+    let id  = generateUID() 
+    save_prospect({ id , nom ,  prenom  ,  adresse_email: Email ,adress:adr })
+    save_devis(id ,  data)
   };
+
+
 
   return (
     <div className="space-y-5">
@@ -56,7 +74,7 @@ function EmailFormulaire() {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Adresse"
-              onChange={(e) => handleChange}
+              onChange={handleChange}
               value={Email}
             />
           </div>
@@ -84,9 +102,9 @@ function EmailFormulaire() {
         </div>
       </div>
 
-      {true ? (
-        <div className="" onClick={senddata} role="button">
-          <Button Suivant="Typehabitat" />
+      {Email && birthdate ? (
+        <div  onClick={senddata} role="button">
+          <Button Suivant="" />
         </div>
       ) : (
         <div></div>

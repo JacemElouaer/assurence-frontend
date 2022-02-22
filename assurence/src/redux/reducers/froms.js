@@ -10,13 +10,22 @@ SAVE_SNISTRENUMBER,
 SAVE_RESILIATION,
 SAVE_DEPENDANCE_MAISON,
 SAVE_PROGRESS,
-SAVE_MAISON_DETAIL
+SAVE_MAISON_DETAIL,
+SAVE_BESOIN_RES,
+SAVE_RESOLUTION_PERI,
+SAVE_PROSPECTINFO, 
+SAVE_PROSPECT
 } from '../actions/formsData'
 
-const  FormReducer = (state= {} ,  action)=> {
-    switch(action.type){
+const  FormReducer = (state = {} ,  action)=> {
+    switch(action.type){ 
+        case SAVE_PROSPECT: 
+        return  {
+            ...state,
+            email : action.email, 
+            daten :  action.daten
+        }
         case SAVE_ADRESS : 
-        console.log(action)
         return {
             ...state,
             adresse: action.adresse ,  
@@ -72,14 +81,30 @@ const  FormReducer = (state= {} ,  action)=> {
         case  SAVE_MAISON_DETAIL : 
             return  {
             ...state,
-            datailMaison : action.datailMaison,
+            detailMaison : action.detailMaison,
             }
         case SAVE_PROGRESS : 
         return {    
-        ...state, 
-        progress :  action.progress}
+            ...state, 
+            progress :  action.progress}
+        case SAVE_BESOIN_RES : 
+        return {    
+            ...state, 
+            besoinres :  action.besoinres}
+        case SAVE_RESOLUTION_PERI:
+        return {
+            ...state,
+            ResiliationP : action.ResiliationP
+        } 
+        case SAVE_PROSPECTINFO: 
+        console.log("step2")
+        return  {
+            ...state,
+            email : action.prospect,  
+
+        }
         default: 
-        return  state
+        return  state 
     
     }
 

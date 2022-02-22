@@ -26,7 +26,6 @@ function SpecificationMaison() {
  
   function change(e) {
     e.preventDefault();
-    console.log(dependance)
     if (dependance.includes(e.target.id)){
 
       dependance = dependance.filter(dept => dept!==e.target.id);
@@ -37,7 +36,6 @@ function SpecificationMaison() {
       setCounter(counter =  counter+1); 
     } 
     setChoix( type_dependance =  dependance)
-    console.log(dependance)
   }
  
 

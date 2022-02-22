@@ -26,30 +26,30 @@ function NameFormulaire() {
   return (
     <div className=  "">
       <EmmaBull/>
-      <div class="">
-          <p class="text-md font-p  text-gray-500  lg:w-full ">
+      <div className="">
+          <p className="text-md font-p  text-gray-500  lg:w-full ">
           Enchantée, Marc !
             <br />
             Quelle est l'adresse du bien à assurer ?
           </p>
       </div>
-      <div class="mb-5 sm:mb-5 mt-2  mx-auto">
-        <div class="justify-center ">
+      <div className="mb-5 sm:mb-5 mt-2  mx-auto">
+        <div className="justify-center ">
           <div className="container   grid grid-cols-1 sm:grid-cols-2  gap-1 w-full">
             <div className="container  w-full">
               <input
                 type="Nom"
-                class="input-shape w-full"
+                className="input-shape w-full"
                 id="inputEmail4"
                 placeholder="Nom"
                 value={nom}
                 onChange={(e)=>setNom(e.target.value)}
               />
             </div>
-            <div class=" container  w-full" >
+            <div className=" container  w-full" >
               <input
                 type="text"
-                class="form-control input-shape w-full"
+                className="form-control input-shape w-full"
                 id="inputPassword4"
                 placeholder="Prénpm"
                 value={prenom}
@@ -60,9 +60,9 @@ function NameFormulaire() {
           </div>
         </div>
       </div>
-      <div class="flex justify-center mt-2 mb-5"> 
+      <div className="flex justify-center mt-2 mb-5"> 
       {nom !=="" && prenom !==""? 
-            <div class="flex justify-center w-full" onClick={senddata}>
+            <div className="flex justify-center w-full" onClick={senddata}>
                <Button Suivant="Adresse" />
             </div>
             :
