@@ -2,7 +2,7 @@ import React from 'react'
 
 function BaseIndex(props) {
   return (
-    <div className="space-y-5">  
+    <div className="space-y-1">  
     <div className="">
       <div className='container'>
         <p>

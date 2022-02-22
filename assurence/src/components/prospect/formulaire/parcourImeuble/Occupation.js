@@ -1,7 +1,7 @@
 import React  ,  {useState} from 'react'
 import Listopptions from  './Listopptions' 
 import ListitemOption from '../../../utils/listitemOption'
-function Parking() { 
+function Occupation() { 
    
   
    
@@ -24,4 +24,4 @@ function Parking() {
   ) 
 }
 
-export default Parking
+export default Occupation

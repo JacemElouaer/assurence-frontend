@@ -1,0 +1,7 @@
+.list-style{
+    
+    transition: border 0.2s ease-in-out;
+} 
+.list-style:hover {
+    border: 2px solid #a6a5a1;
+}

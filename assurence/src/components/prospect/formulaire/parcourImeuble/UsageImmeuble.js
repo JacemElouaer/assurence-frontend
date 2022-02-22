@@ -26,10 +26,10 @@ function UsageImmeuble() {
     
     <Two_Option_Base text="L'immeuble est à usage ? ">
           <div onClick={change} id="Habitation"    >
-          <GridOption   id="Habitation"  choix={Usage } src={null}    text_option="5 niveaux ou moins"/>
+          <GridOption   id="Habitation"  choix={Usage } src={"null"}    text_option="5 niveaux ou moins"/>
           </div>
           <div onClick={change} id="Commerciale/profissionnel"    >
-          <GridOption id="Commerciale/profissionnel"  choix={Usage } src={null} text_option="Entre 6 et 8  niveaux"/>
+          <GridOption id="Commerciale/profissionnel"  choix={Usage } src={"null"} text_option="Entre 6 et 8  niveaux"/>
           </div>
          
 

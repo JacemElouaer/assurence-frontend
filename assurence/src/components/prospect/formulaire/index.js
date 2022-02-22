@@ -22,7 +22,11 @@ import Niveausous_sol from  './parcourImeuble/Niveausous_sol'
 import Parking from  './parcourImeuble/Parking' 
 import PeriodConstruction from  './parcourImeuble/PeriodConstruction' 
 import ImeubleProp from './parcourImeuble/ImeubleProp'  
-import UsageImmeuble from  './parcourImeuble/UsageImmeuble'
+import UsageImmeuble from  './parcourImeuble/UsageImmeuble' 
+import Occupation  from  './parcourImeuble/Occupation'
+import PropiertaireOccupants from  './parcourImeuble/PropiertaireOccupants' 
+import ActuellmentAssure  from './parcourImeuble/ActuellmentAssure'
+import BesoinResilierImmeuble from './parcourImeuble/BesoinResilierImmeuble'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormulaireImmeuble from './parcourImeuble/index'
 import InstallationImeuble from './parcourImeuble/InstallationImeuble'
@@ -48,6 +52,10 @@ const FormulaireIndex = () => {
                       <Route  path="ImeubleProp" element={<ImeubleProp />} />
                       <Route  path="InstallationImeuble" element={<InstallationImeuble />} />
                       <Route  path="UsageImmeuble" element={<UsageImmeuble/>} />
+                      <Route  path="PropiertaireOccupants" element={<PropiertaireOccupants/>} />
+                      <Route  path="ActuellmentAssure" element={<ActuellmentAssure/>} />
+                      <Route  path="BesoinResilierImmeuble" element={<BesoinResilierImmeuble/>} />
+                      <Route  path="Occupation" element={<Occupation/>} />
                       </Route>
                     <Route
                       path="Adresse"
