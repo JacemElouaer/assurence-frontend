@@ -17,15 +17,23 @@ import ComplementAdresse from "./ComplementAdresse";
 import SpecificationMaison from "./SpecificationMaison";
 import DetailMaison from "./DetailMaison"; 
 import NiveauImmeuble from "./parcourImeuble/NiveauImmeuble"
-import NatureImmeuble from "./parcourImeuble/NatureImmeuble"  
+import TypeEntreprise from  './parcourImeuble/TypeEntreprise'
+import NombreSinistreImmeuble  from  './parcourImeuble/NombreSinistreImmeuble'
+import TypeCoprepriété from "./parcourImeuble/TypeCoprepriété"  
 import Niveausous_sol from  './parcourImeuble/Niveausous_sol'  
 import Parking from  './parcourImeuble/Parking' 
-import PeriodConstruction from  './parcourImeuble/PeriodConstruction' 
+import PeriodeContruction from  './parcourImeuble/PeriodeContruction' 
+import TravauxRenovation from './parcourImeuble/TravauxRenovation'
+import PourcentagePropreitaire from './parcourImeuble/PourcentagePropreitaire'
 import ImeubleProp from './parcourImeuble/ImeubleProp'  
+import TypeImmeuble from './parcourImeuble/TypeImmeuble'
 import UsageImmeuble from  './parcourImeuble/UsageImmeuble' 
 import Occupation  from  './parcourImeuble/Occupation'
 import PropiertaireOccupants from  './parcourImeuble/PropiertaireOccupants' 
 import ActuellmentAssure  from './parcourImeuble/ActuellmentAssure'
+import ImmeubleGeneralinfo from './parcourImeuble/ImmeubleGeneralinfo'
+import SurfaceComerciale from './parcourImeuble/SurfaceComerciale'
+import ActiviteComerciale from './parcourImeuble/ActiviteComerciale'
 import BesoinResilierImmeuble from './parcourImeuble/BesoinResilierImmeuble'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormulaireImmeuble from './parcourImeuble/index'
@@ -45,10 +53,10 @@ const FormulaireIndex = () => {
                   <Routes>
                   <Route  path="Immeuble" element={<FormulaireImmeuble/>}> 
                       <Route  path="NiveauImmeuble" element={<NiveauImmeuble />} />
-                      <Route  path="NatureImmeuble" element={<NatureImmeuble />} />
+                      <Route  path="TypeCoprepriete" element={<TypeCoprepriété />} />
                       <Route  path="Niveausous_sol" element={<Niveausous_sol />} />
                       <Route  path="Parking" element={<Parking />} />
-                      <Route  path="PeriodConstruction" element={<PeriodConstruction />} />
+                      <Route  path="PeriodConstruction" element={<PeriodeContruction />} />
                       <Route  path="ImeubleProp" element={<ImeubleProp />} />
                       <Route  path="InstallationImeuble" element={<InstallationImeuble />} />
                       <Route  path="UsageImmeuble" element={<UsageImmeuble/>} />
@@ -56,6 +64,18 @@ const FormulaireIndex = () => {
                       <Route  path="ActuellmentAssure" element={<ActuellmentAssure/>} />
                       <Route  path="BesoinResilierImmeuble" element={<BesoinResilierImmeuble/>} />
                       <Route  path="Occupation" element={<Occupation/>} />
+                      <Route  path="ImmeubleGeneralinfo" element={<ImmeubleGeneralinfo/>} />
+                      <Route  path="TypeImmeuble" element={<TypeImmeuble/>} />
+                      <Route  path="PeriodeContruction" element={<PeriodeContruction/>} />
+                      <Route  path="TravauxRenovation" element={<TravauxRenovation/>} />
+                      <Route  path="SurfaceComerciale" element={<SurfaceComerciale/>} />
+                      <Route  path="ActiviteComerciale" element={<ActiviteComerciale/>} />
+                      <Route  path="PourcentagePropreitaire" element={<PourcentagePropreitaire/>} />
+                      <Route  path="NombreSinistreImmeuble" element={<NombreSinistreImmeuble/>} />
+                      <Route  path="TypeEntreprise" element={<TypeEntreprise/>} />
+                      
+
+                      
                       </Route>
                     <Route
                       path="Adresse"

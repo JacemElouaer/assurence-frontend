@@ -1,8 +1,8 @@
 import React  ,  {useState} from 'react'
-import Three_Option_Base from './Three_Option_Base'
+import Three_Option_Base from './Grid_theme/Three_Option_Base'
 import GridMultipleOption  from  "../../../utils/gridMultipleOption"  
 import  { useDispatch , useSelector} from  'react-redux'
-
+import Button from '../../../utils/Button'
 var  install_depandance = [""]
 function TravauxRenovation() { 
   
@@ -30,7 +30,7 @@ function TravauxRenovation() {
   }
  
   return (
-    
+    <div>
     <Three_Option_Base text="Des travaux ont-ils été réalisés dans l'immeuble au cours des 15 dernières années ">
           <div  id="Plombier" onClick={change} className="dblclick"  >
           <GridMultipleOption  counter={counter} id="Plombier"  choix={installation} src={null}    text_option="Plombier"/>
@@ -43,6 +43,12 @@ function TravauxRenovation() {
           </div>
 
     </Three_Option_Base>
+    <div>
+    {installation ? 
+          <div onClick={senddata}><Button Suivant="Immeuble/UsageImmeuble" /></div>:  
+          undefined } 
+      </div> 
+    </div>
 
   )
 }

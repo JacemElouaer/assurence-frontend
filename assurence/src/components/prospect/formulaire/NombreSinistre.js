@@ -18,6 +18,7 @@ let  choice_map = {
   100 :  "Trois ou plus"
 }
 
+
 function NombreSinistre() {
   
   useEffect(() => {

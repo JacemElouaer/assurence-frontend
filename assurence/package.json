@@ -1,6 +1,5 @@
 {
-  "name": "assurence", 
-  "proxy" :  "http://127.0.0.1:8000/" ,  
+  "name": "assurence",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +10,13 @@
     "@mui/icons-material": "^5.4.1",
     "@mui/lab": "^5.0.0-alpha.68",
     "@mui/material": "^5.4.1",
+    "@progress/kendo-licensing": "^1.2.2",
+    "@progress/kendo-react-animation": "^5.0.1",
+    "@progress/kendo-react-buttons": "^5.0.1",
+    "@progress/kendo-react-dropdowns": "^5.0.1",
+    "@progress/kendo-react-intl": "^5.0.1",
+    "@progress/kendo-react-treeview": "^5.0.1",
+    "@progress/kendo-theme-default": "^5.2.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

@@ -1,8 +1,8 @@
 import React  ,  {useState} from 'react'
-import Two_Option_Base from './Two_Option_Base'
+import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"  
 import  { useDispatch , useSelector} from  'react-redux'
-
+import Button from '../../../utils/Button'
 function PropiertaireOccupants() { 
   
   let  boccupation =  "oui"
@@ -23,9 +23,12 @@ function PropiertaireOccupants() {
        setOccupation("non")
       }
  };
+ const senddata=()=>{
+
+ }
  
   return (
-    
+    <div>
     <Two_Option_Base text="Plus de 60%  des propriétaire sont occupants dans l'immeuble ? ">
           <div onClick={change} id="oui"> 
         <GridbinaryOption id="oui" type="oui"  choix={occupation} option_text="Oui"/>
@@ -34,6 +37,12 @@ function PropiertaireOccupants() {
         <GridbinaryOption id="non" type="non"  choix={occupation} option_text="Non"/>
         </div>
     </Two_Option_Base>
+    <div>
+    {occupation ? 
+          <div onClick={senddata}><Button Suivant="ChangerAssurance" /></div>:  
+          <div onClick={senddata}><Button Suivant="EmailFormulaire" /></div> } 
+      </div> 
+    </div>
 
   )
 }

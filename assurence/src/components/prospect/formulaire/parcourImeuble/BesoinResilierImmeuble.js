@@ -1,5 +1,5 @@
 import React  ,  {useState} from 'react'
-import Two_Option_Base from './Two_Option_Base'
+import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"  
 import  { useDispatch , useSelector} from  'react-redux'
 

@@ -1,0 +1,21 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { MultiSelect } from '@progress/kendo-react-dropdowns';
+const sports = ["Baseball", "Basketball", "Cricket", "Field Hockey", "Football", "Table Tennis", "Tennis", "Volleyball"];
+
+const App = () => {
+  const [value, setValue] = React.useState([]);
+
+  const onChange = event => {
+    setValue([...event.value]);
+  };
+
+  return <div className="example-wrapper">
+      <div>
+        <div>Favorite sports:</div>
+        <MultiSelect data={sports} onChange={onChange} value={value} />
+      </div>
+    </div>;
+};
+
+ReactDOM.render(<App />, document.querySelector('my-app'));
