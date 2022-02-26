@@ -107,8 +107,8 @@ const changeSurface = (e)=>{
   return (
     <div className="mt-2">
       <div>
-        <div>
-          <p>
+      <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
             Monsieur Marc est que  
             <br />
             vous pouvez nous fournir donner

@@ -14,7 +14,7 @@ function TypeEntreprise() {
   
    return ( 
     <div>
-      <Listopptions text="Quel  type de parking  en sous-sol avez-vous ? ">
+      <Listopptions text="Vous êtes ? ">
       {entreprise_list_options.map((option)=>
          <div id={option} onClick={change}><ListitemOption text_option={option} id={option} choix={type_entreprise}/></div>
       )}
@@ -22,7 +22,7 @@ function TypeEntreprise() {
     </Listopptions> 
     <div>
     {type_entreprise !== ""? 
-          <div onClick={senddata}><Button Suivant="Immeuble/ImeubleProp" /></div>:  undefined} 
+          <div onClick={senddata}><Button Suivant="Immeuble/ImmeubleProspectInfo" /></div>:  undefined} 
       </div>
     </div>
   ) 

@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { teal } from '@mui/material/colors';
+import { teal } from '@mui/material/colors'; 
+import { grey } from '@mui/material/colors'; 
+
 
 
 
@@ -14,7 +16,7 @@ function Change(e){
 }
 
   return (
-    <Box  className="w-full">
+    <Box  className= " flex container">
       <Slider
         onChange={Change}
         default_value = {props.valuesin[props.default_value]}
@@ -22,7 +24,7 @@ function Change(e){
         aria-label="Restricted values"
         step={null}
         marks={props.choix}
-        style={{color :teal[200]  , width  :  '500px'  ,  fontSize : " 25px"}}
+        style={{color :grey[200]  , width  :  '500px'  ,  fontSize : " 25px"}}
       />
     </Box>
   );

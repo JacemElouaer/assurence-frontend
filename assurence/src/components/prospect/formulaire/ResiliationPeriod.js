@@ -67,10 +67,8 @@ let bdate =  data.ResiliationP ?   data.ResiliationP.dateres :  ""
   return (
     <div className="mt-1">
       <div className="">
-        <div>
-          <p>
-            <br />
-            Nous avons besoin de savoir depuis quand vous étiez assuré pour ce bien<br/> afin de définir une date de début à votre contrat. 
+      <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
           </p>
         </div>
       </div>

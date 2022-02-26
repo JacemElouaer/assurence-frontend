@@ -3,6 +3,14 @@ import Three_Option_Base from './Grid_theme/Three_Option_Base'
 import GridMultipleOption  from  "../../../utils/gridMultipleOption"  
 import  { useDispatch , useSelector} from  'react-redux'
 import Button from '../../../utils/Button'
+import  facade from  '../../../../assets/image_finale/facade.png'
+import  facade_colorer from  '../../../../assets/image_finale/facade_colorer.png'
+import  plumber from  '../../../../assets/image_finale/robinet.png'
+import  plumber_colorer from  '../../../../assets/image_finale/rubinet_colorer.png'
+import  roof from  '../../../../assets/image_finale/roof.png'
+import  roofing_color from  '../../../../assets/image_finale/roofing_colorer.png'
+
+
 var  install_depandance = [""]
 function TravauxRenovation() { 
   
@@ -33,13 +41,13 @@ function TravauxRenovation() {
     <div>
     <Three_Option_Base text="Des travaux ont-ils été réalisés dans l'immeuble au cours des 15 dernières années ">
           <div  id="Plombier" onClick={change} className="dblclick"  >
-          <GridMultipleOption  counter={counter} id="Plombier"  choix={installation} src={null}    text_option="Plombier"/>
+          <GridMultipleOption  counter={counter} id="Plombier"  choix={installation} src={plumber} src_c={plumber_colorer}    text_option="Plombier"/>
           </div>
           <div  id="Toiture" onClick={change}  className="dblclick" >
-          <GridMultipleOption counter={counter} id="Toiture"  choix={installation} src={null} text_option="Toiture"/>
+          <GridMultipleOption counter={counter} id="Toiture"  choix={installation} src={roof} src_c={roofing_color} text_option="Toiture"/>
           </div>
           <div  id="Facade" counter={counter} onClick={change} className="dblclick">
-          <GridMultipleOption id="Facade" choix={installation} src={null}  text_option="Facade"/>
+          <GridMultipleOption id="Facade" choix={installation} src={facade} src_c={facade_colorer}  text_option="Facade"/>
           </div>
 
     </Three_Option_Base>

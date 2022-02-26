@@ -1,4 +1,4 @@
-import React  , {useState , useEffect} from 'react'
+import React  , {useState } from 'react'
 import Form_grid from  './Grid_theme/Form_grid'
 import Button from '../../../utils/Button'
 
@@ -63,9 +63,9 @@ function PeriodeContruction() {
     
   return (
       <div> 
-    <Form_grid>
-    <div class="md:mb-2 mb-0">
-      <div class=" items-center mx-auto w-full p-16">
+    <Form_grid text="Quand l'immeuble a t-il été contstruit ?">
+    <div class=" mb-0">
+      <div class=" items-center mx-auto w-full p-4">
         <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
       </div> 
       

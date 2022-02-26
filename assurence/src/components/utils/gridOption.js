@@ -21,19 +21,25 @@ componentDidMount(){
 }
 render(){
   return (      
-<div  className="flex flex-col mb-2   text-center  justify-center w-4/4 xs:w-36 h-40 md:w-44 items-center focus:outline-none relative mx-auto" style={{ pointerEvents:"none"}}
+<div  className="flex flex-col mb-2   text-center  justify-center w-4/4 xs:w-44 h-44 md:w-44 items-center focus:outline-none relative mx-auto" style={{ pointerEvents:"none"}}
   id= {this.props.id}>
     {this.props.src ?
       <div className="flex justify-center  mx-auto  items-end mb-1 h-110 w-full" style={{ pointerEvents:"none"}}>
-         <img   src={this.props.src} alt="logo" className=" h-20"  style={{ pointerEvents:"none"}}/> 
+        { this.props.id ===this.props.choix ?  <img   src={this.props.src_c} alt="logo" className="h-100"  style={{ pointerEvents:"none" ,  opacity:"0.2"}}/>:
+         <img   src={this.props.src} alt="logo" className="h-100"  style={{ pointerEvents:"none" }}/> }
       </div>:  undefined}
-      <div className="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans" 
-      style={{ pointerEvents:"none"}}><p className="text-4" style={{ pointerEvents:"none"}}>{this.props.text_option}</p></div>
-  <div
-    className="absolute top-4 right-4    w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
+      <div className="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans w-40" 
+      style={{ pointerEvents:"none"}}><p className="text-sm  font-bold text-[#444] text-4 option-text" style={{ pointerEvents:"none"}}>{this.props.text_option}</p></div>
+  {this.props.src ? <div
+    className="absolute top-40 right-center     w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
      id={`check${this.props.id}`}>
     <DoneIcon   style={{ fill: '#e0dfda' }}  />
-  </div>
+  </div> :  <div
+  className="absolute top-28 right-center    w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
+   id={`check${this.props.id}`}>
+  <DoneIcon   style={{ fill: '#e0dfda' }}  />
+</div>  }
+  
   
 </div>
   )

@@ -19,7 +19,9 @@ import DetailMaison from "./DetailMaison";
 import NiveauImmeuble from "./parcourImeuble/NiveauImmeuble"
 import TypeEntreprise from  './parcourImeuble/TypeEntreprise'
 import NombreSinistreImmeuble  from  './parcourImeuble/NombreSinistreImmeuble'
+import DateAssembleGenerale from './parcourImeuble/DateAssembleGenerale'
 import TypeCoprepriété from "./parcourImeuble/TypeCoprepriété"  
+import ImmeubleProspectInfo  from  './parcourImeuble/ImmeubleProspectInfo'
 import Niveausous_sol from  './parcourImeuble/Niveausous_sol'  
 import Parking from  './parcourImeuble/Parking' 
 import PeriodeContruction from  './parcourImeuble/PeriodeContruction' 
@@ -47,8 +49,8 @@ const FormulaireIndex = () => {
         <Navbar />
         <div className=" flex flex-row justify-between justify-content  mx-auto  ">
           <div className="w-full h-full">
-            <div className="flex flex-col items-center justify-center py-14  ">
-              <div className="md:pt-28">
+            <div className="flex flex-col items-center justify-center py-1  ">
+              <div className="md:pt-20">
                 <div className=" ">
                   <Routes>
                   <Route  path="Immeuble" element={<FormulaireImmeuble/>}> 
@@ -73,6 +75,10 @@ const FormulaireIndex = () => {
                       <Route  path="PourcentagePropreitaire" element={<PourcentagePropreitaire/>} />
                       <Route  path="NombreSinistreImmeuble" element={<NombreSinistreImmeuble/>} />
                       <Route  path="TypeEntreprise" element={<TypeEntreprise/>} />
+                      <Route  path="ImmeubleProspectInfo" element={<ImmeubleProspectInfo/>} />
+                      <Route  path="DateAssembleGenerale" element={<DateAssembleGenerale/>} />
+                      
+                      
                       
 
                       

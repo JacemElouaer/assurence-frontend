@@ -66,8 +66,9 @@ const changenbsinistre= (value) =>{
  return (
     <div class="mx-auto  md:w-700 w-full  px-5 md:px-0  ">
     <div class="flex justify-center Axiforma-Regular text-13-18 lg:text-16-22 text-dark-blue-600 text-center mt-5 lg:mt-2.5 mb-5 lg:mb-10">
-      <div class="max-w-616 px-5 lg:px-0">
-      Combien de sinistres avez-vous eu au cours des 3 dernières années ?
+    <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
+      Combien de sinistres avez-vous eu au cours des 3 dernières années ?</p>
       </div>
     </div>
    

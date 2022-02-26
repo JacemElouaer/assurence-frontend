@@ -11,7 +11,7 @@ function NiveauImmeuble() {
     const  senddata =(e)=>{}
   return (
     <div>
-    <Three_Option_Base text="Combien de niveaux sous sols comporte ">
+    <Three_Option_Base text="Combien de niveaux comporte votre immeuble ? ">
          <div onClick={change} id="5 niveaux ou moins"    >
           <GridOption   id="5 niveaux ou moins"  choix={niveau_immeuble } src={null}    text_option="5 niveaux ou moins"/>
           </div>

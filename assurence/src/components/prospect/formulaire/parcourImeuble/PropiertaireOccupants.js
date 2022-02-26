@@ -1,7 +1,7 @@
 import React  ,  {useState} from 'react'
 import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"  
-import  { useDispatch , useSelector} from  'react-redux'
+import  { useDispatch } from  'react-redux'
 import Button from '../../../utils/Button'
 function PropiertaireOccupants() { 
   

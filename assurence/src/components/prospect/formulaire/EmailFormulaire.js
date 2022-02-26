@@ -52,8 +52,8 @@ function EmailFormulaire() {
   return (
     <div className="space-y-5">
       <div class="">
-        <div class="container">
-          <p className="text-md font-p  text-gray-500  lg:800 ">
+      <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
             Bonjour ! Je m’appelle Léa.
             <br />
             Je vais vous créer un devis en quelques minutes. Prêt(e) ?.

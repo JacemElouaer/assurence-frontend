@@ -1,17 +1,17 @@
-import React ,  {useEffect, useState} from 'react'; 
+import React ,  { useState} from 'react'; 
 import { useSelector } from 'react-redux';
 export default function SelectLabels(props) {
   let option   =  ["","Janvier" , "Fevrier" ,  "Mars" ,  "Avril" ,  "Mai" , "Join" , "Juillet" ,  "Aout" ,  "Septembre", "Octobre", "Novembre ", "Decembre"]
  
 
     
-let  data =  useSelector(state=>state.FormReducer)
-  let [dateRes  , setDateRes] =  useState() 
- 
+/*let  data =  useSelector(state=>state.FormReducer)
+  
+    let  [mois ,  setMois] =  useState(0) */
   const d = new Date();
   let month = d.getMonth()+1; 
   let year  = d.getFullYear()
-   let  [mois ,  setMois] =  useState(0) 
+
   function  onchange(e){
    
    e.preventDefault() ;

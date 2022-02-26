@@ -291,3 +291,16 @@ border: 2px solid #deddd9 ;
             transition: all 5000s ease-in-out 0s;
             transition-property: background-color, color;
         }
+
+img{
+    opacity: 0.9 !important;
+} 
+
+
+p{
+   font-family:   Merriweather, Georgia, serif !important;
+
+}
+.option-text{
+    font-family: "Gill Sans", sans-serif !important;
+}

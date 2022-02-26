@@ -3,9 +3,15 @@ import Button from "../../utils/Button";
 import GridOption from "../../utils/gridOption";  
 import {useSelector , useDispatch} from "react-redux"
 import {saveTypeHabitat} from '../../../redux/actions/formsData'
-import immeuble from  '../../../assets/images/immeuble.svg'
-import apartment from  '../../../assets/images/apartment.svg'
-import house from  '../../../assets/images/house.svg'
+import standing from  '../../../assets/image_finale/standing.png'
+import standing_colorer from  '../../../assets/image_finale/standing_colorer.png'
+
+import maison from  '../../../assets/image_finale/maison.png'
+import maison_colorer from  '../../../assets/image_finale/maison_colorer.png'
+import immeuble_xxlarge from  '../../../assets/image_finale/immeuble_xxlarge.png'
+import immeuble_xxlarge_colorer from  '../../../assets/image_finale/immeuble_xxlarge_colorer.png'
+
+
  import  {saveProgress} from '../../../redux/actions/formsData'
 function Typehabitat() {
 
@@ -48,28 +54,33 @@ function Typehabitat() {
 return (
     <div className="space-y-5">
       
-      <div className="">
-        <div className='container'>
-          <p>
+      <div className=  "">
+      <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
             Parfait ! Vous souhaitez assurer
           </p>
         </div>
       </div>
       <div className="w-full flex justify-center ">
-          <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-7 grid-shape ">
+          <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-1  ">
             <div onClick={change} id="Appartement"  className="dblclick"  >
-          <GridOption   id="Appartement"  choix={type_habitat } src={apartment}    text_option="Un Appartement"/>
+          <GridOption   id="Appartement"  choix={type_habitat }  src={standing} src_c={standing_colorer} text_option="Appartement"/>
           </div>
           <div onClick={change} id="Maison"   className="dblclick" >
-          <GridOption id="Maison"  choix={type_habitat } src={house} text_option="Un Maison"/>
+          <GridOption id="Maison"  choix={type_habitat } src={maison} src_c={maison_colorer} text_option="Maison"/>
           </div>
           <div onClick={change} id="Immeuble"  className="dblclick">
-          <GridOption id="Immeuble" choix={type_habitat } src={immeuble}   text_option="Un Immeuble"/>
+          <GridOption id="Immeuble" choix={type_habitat } src={immeuble_xxlarge}  src_c={immeuble_xxlarge_colorer}   text_option="Immeuble"/>
           </div>
           </div>
       </div>
 
-    {type_habitat ?  <div onClick={senddata}>
+    {type_habitat ? 
+    type_habitat === 'Immeuble' ? 
+    <div onClick={senddata}>
+    <Button Suivant="Immeuble/ImmeubleGeneralinfo" />
+    </div>
+     :<div onClick={senddata}>
     <Button Suivant={url_suivant} />
     </div>: 
       <div></div>

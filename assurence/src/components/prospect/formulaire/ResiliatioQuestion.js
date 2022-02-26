@@ -34,8 +34,8 @@ function Resiliation() {
   
   return (
     <div className="mt-1">
-        <div>
-          <p>
+         <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
             Avez-vous besoin que nous résilions votre ancien contrat<br/> d'assurance pour vous ? On s'en occupe gratuitement.
           </p>
         </div>

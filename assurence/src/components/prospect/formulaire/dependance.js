@@ -1,7 +1,8 @@
 import React , {useState  ,  useEffect} from "react";
 import Button from "../../utils/Button";
 import StyledRadio from "../../utils/StyledRadio";
-import icon_noo from  '../../../assets/images/icon_noo.svg'
+import dependance from  '../../../assets/image_finale/dependance.png'
+import dependance_color from  '../../../assets/image_finale/dependance_color.png'
 import {saveDependance } from '../../../redux/actions/formsData' 
 import {useDispatch ,  useSelector } from  'react-redux' ; 
 import RadioGroup from '@mui/material/RadioGroup';
@@ -67,7 +68,8 @@ function  senddata(e){
               </div>
               <div class="md:mb-5 lg:mb-7">
                 <div class="flex justify-center">
-                  <img class="object-contain w-28 h-28"  src={icon_noo} alt="" />
+                  {exist === 'Non' ? <img class="object-contain w-28 h-28"  src={dependance}  alt="" /> :
+                  <img class="object-contain w-28 h-28"  src={dependance_color} alt="" />   }
                 </div>
               </div>
               <div class="md:mb-5 ">

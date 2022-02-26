@@ -4,7 +4,16 @@ import GridOption from "../../utils/gridOption";
 import {saveAppartSpecification} from '../../../redux/actions/formsData' ;  
 import {useSelector ,  useDispatch} from  'react-redux'
 import rezdechausse from  '../../../assets/images/rezdechausse.svg'
-import intermediareapart from  '../../../assets/images/intermediareapart.svg'
+import m_immeuble_colorer from  '../../../assets/image_finale/m_immeuble_colorer.png'
+import m_immeuble from  '../../../assets/image_finale/m_immeuble.png'
+import R_immeuble from  '../../../assets/image_finale/R_immeuble.png'
+import R_immeuble_colorer from  '../../../assets/image_finale/R_immeuble_colorer.png' 
+import T_immeuble from  '../../../assets/image_finale/T_immeuble.png'
+import T_immeuble_colorer from  '../../../assets/image_finale/T_immeuble_colorer.png' 
+
+
+
+
 import  {saveProgress} from '../../../redux/actions/formsData' 
 import roof from  '../../../assets/images/roof.svg'
 function SpecificiteAppartement() {
@@ -105,15 +114,15 @@ const changeSurface = (e)=>{
         </div>
       </div>
       <main className="lg:mx-auto   pl-7 pr-7 ">
-        <div className="grid grid-cols-1  2xs:grid-cols-2  s:grid-cols-3 gap-2 mt-5 grid-shape ">
+        <div className="grid grid-cols-1  2xs:grid-cols-2  s:grid-cols-3 gap-2 mt-5  ">
         <div onClick={change} id="rez-de-chaussée">
-          <GridOption   id="rez-de-chaussée"  choix={etage }  src={rezdechausse} text_option="Rez-de-chaussée" />
+          <GridOption   id="rez-de-chaussée"  choix={etage }  src={R_immeuble} src_c={R_immeuble_colorer} text_option="Rez-de-chaussée" />
           </div>
           <div onClick={change} id="Intermédiaire">
-          <GridOption id="Intermédiaire"  choix={etage } src={intermediareapart} text_option="Intermédiaire" />
+          <GridOption id="Intermédiaire"  choix={etage } src={m_immeuble} src_c={m_immeuble_colorer} text_option="Intermédiaire" />
           </div>
           <div onClick={change} id="Dernier">
-          <GridOption id="Dernier" choix={etage } src={roof}  text_option="Dernier"  />
+          <GridOption id="Dernier" choix={etage } src={T_immeuble} src_c={T_immeuble_colorer}  text_option="Dernier"  />
           </div>
         </div>
       </main> 

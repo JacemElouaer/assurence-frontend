@@ -46,8 +46,8 @@ render(){
           }
       </div>
       {this.props.type==="oui"? 
-      <div class="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans" style={{ pointerEvents:"none"}}><p class="text-10" style={{ pointerEvents:"none"}}>{this.props.option_text}</p></div>: 
-       <div class="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans" style={{ pointerEvents:"none"}}><p class="text-10" style={{ pointerEvents:"none"}}>{this.props.option_text}</p></div>
+      <div class="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans mt-2 w-3/4" style={{ pointerEvents:"none"}}><p className="text-sm font-bold text-[#444] text-4 font-sans" style={{ pointerEvents:"none"}}>{this.props.option_text}</p></div>: 
+       <div class="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans mt-2 w-3/4" style={{ pointerEvents:"none"}}><p className="text-sm font-bold text-[#444] text-4 font-sans" style={{ pointerEvents:"none"}}>{this.props.option_text}</p></div>
       }
   <div class="absolute top-4 right-6     w-2 h-2 rounded-full" display =  {{display: "none"}} id={`check${this.props.id}`}>
 

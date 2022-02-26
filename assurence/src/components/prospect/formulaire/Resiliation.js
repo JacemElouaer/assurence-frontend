@@ -42,13 +42,13 @@ function Resiliation() {
   
   return (
     <div className="mt-1">
-        <div>
-          <p>
-            Avez-vous besoin que nous résilions votre ancien contrat<br/> d'assurance pour vous ? On s'en occupe gratuitement.
+        <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
+          Combien de sinistres avez-vous eu au cours des 3 dernières années ?
           </p>
         </div>
       <main className="flex justify-center mt-16">
-        <div className="grid grid-cols-1  2xs:grid-cols-2   s:grid-cols-2 gap-5 grid-shape "  >
+        <div className="grid grid-cols-1  2xs:grid-cols-2   s:grid-cols-2 gap-5  "  >
         <div onClick={change} id="oui"> 
         <GridbinaryOption id="oui" type="oui"  choix={resiliation} option_text="Oui, résilier mon ancien contrat"/>
         </div>

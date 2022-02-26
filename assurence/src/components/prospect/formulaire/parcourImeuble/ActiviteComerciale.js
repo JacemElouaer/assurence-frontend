@@ -1,8 +1,7 @@
 import React  , {useState }from 'react'
 import Button  from  '../../../utils/Button'
 import Form_grid from './Grid_theme/Form_grid'
-import { MultiSelect } from '@progress/kendo-react-dropdowns';
-function ActiviteComerciale() { 
+ function ActiviteComerciale() { 
   
 let choices  = ["Hotel" ,  "Musée" ,  "Bibliotèque" ,  "Ambassade" , "Lieu de culte" ,  ""]
 let  [surface , setSurface] =  useState("") 
@@ -10,6 +9,11 @@ let  [Activite , setActivite] = useState([])
 const  changeSurface =(e)=>{
   setSurface(e.target.value) 
 } 
+const  onSelect = (selectedList, selectedItem)=> {
+}
+
+const onRemove = (selectedList, removedItem) => {
+}
      
 const  senddata = (e) =>{
   console.log("hello")
@@ -28,10 +32,9 @@ const selected = Activite.length;
       </div>
       <div class="w-full max-w-lg mt-4">
       <label for="name" class="leading-7 text-sm text-gray-600 " ><p> Verifié vos activité ne font pas partis de la liste exhaistive des activités que nous ne couvrons pas </p> </label>
-      <MultiSelect data={choices} onChange={onChange } allowCustom={true} value={Activite}  style={{height : "45px" ,}}  />
+
     </div>
     <div class="relative mb-4">
-      
     </div>
     <div class="relative mb-4">
       

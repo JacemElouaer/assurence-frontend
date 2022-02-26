@@ -64,9 +64,9 @@ function NombreSinistreImmeuble() {
     
   return (
       <div> 
-    <Form_grid>
-    <div class="md:mb-2 mb-0">
-      <div class=" items-center mx-auto w-full p-16">
+    <Form_grid text="Combien de sinistre avez-vous eu au cours des 3 dernière années ?"  >
+    <div class="md:mb-1 mb-0">
+      <div class=" items-center mx-auto w-full p-8">
         <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
       </div> 
       

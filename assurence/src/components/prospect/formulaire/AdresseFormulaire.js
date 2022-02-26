@@ -27,21 +27,21 @@ function AdresseFormulaire() {
   
 
   return (
-    <div >
-        <EmmaBull/>
-        <div >
-          <p className="text-md font-p  text-gray-500   ">
-          Bonjour ! Je m’appelle Léa.
-            <br />
-            Je vais vous créer un devis en quelques minutes. Prêt(e) ?.
-          </p>
+    <div className=  "">
+      <div className="mx-auto w-full md:w-800  text-center pb-2">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
+          Bonjour  {data.generalinfo.prenom } !</p>
+            <br/>
+            <br/>
+            <p className="text-xl xs:text-2xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full ">
+            Je vais vous créer un devis en quelques minutes. Prêt(e) ?.</p>
+          
         </div>
-        <div className="form-group pl-15 container mx-auto">
-          <div className="  sm:pl-10 mt-4 ">
-            
+        <div className="form-group container  place-items-center mx-auto grid grid-cols-1 md:grid-cols-8   w-full md:w-6/7 mt-16">
+          <div className= " md:col-span-5 sm:pl-10 w-full mb-2"> 
           <input
             type="email"
-            className="input-shape w-full  bg-white"
+            className="input-shape   bg-white w-full "
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Adresse"
@@ -49,13 +49,13 @@ function AdresseFormulaire() {
             value={adresse}
           />
           </div>
-          <div className="sm:pl-10 mt-4 "> 
+          <div className="sm:pl-10 col-span-3 w-full mb-2"> 
           <input
             type="email"
             className="input-shape w-full  font-weight bg-white"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Complement d'adresse"
+            placeholder="Complément d'adresse"
             onChange={(e)=>setComplement(Complement = e.target.value)}
             value={Complement}
           />

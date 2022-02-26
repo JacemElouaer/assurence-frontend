@@ -1,8 +1,8 @@
-import React  , {useState , useEffect} from 'react'
+import React  , {useState } from 'react'
 import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"   
 import Button  from  '../../../utils/Button'
-import  { useDispatch , useSelector} from  'react-redux'
+import  { useDispatch } from  'react-redux'
 
 function PourcentagePropreitaire() {
    /*useEffect(() => {
