@@ -58,7 +58,7 @@ function Resiliation() {
         </div>
       </main>
       
-      <div className="  mt-16  flex justify-center "  onClick={senddata}>
+      <div className="  mt-2  flex justify-center "  onClick={senddata}>
 
         {resiliation ? 
             <Button Suivant="ChangerAssurance" />: 

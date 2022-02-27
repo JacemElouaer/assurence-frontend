@@ -4,10 +4,13 @@ import GridOption from "../../utils/gridOption";
 import {useSelector , useDispatch} from "react-redux"  
 import {saveproprietyChoice} from '../../../redux/actions/formsData'
 import contart from  '../../../assets/images/contrat.svg'
-import proprietaire from '../../../assets/images/proprietaire.svg'
 import propauc from  '../../../assets/images/propauc.svg';  
 import key from  '../../../assets/image_finale/key.png'
 import key_colorer from  '../../../assets/image_finale/key_colorer.png'
+import locataire_colorer from  '../../../assets/image_finale/locataire_colorer.png'
+import locataire from  '../../../assets/image_finale/locataire.png'
+import pno_colorer from  '../../../assets/image_finale/pno_colorer.png'
+import pno from  '../../../assets/image_finale/pno.png'
 import  {saveProgress} from '../../../redux/actions/formsData'
 function TypePropriete() { 
   
@@ -48,13 +51,13 @@ function TypePropriete() {
       <div className="w-full flex justify-center ">
           <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-7  ">
             <div onClick={change} id="locataire">
-          <GridOption   id="locataire"  choix={propriety} src={contart} text_option="Locataire"/>
+          <GridOption   id="locataire"  choix={propriety} src={locataire} src_c={locataire_colorer} text_option="Locataire"/>
           </div>
           <div onClick={change} id="proprietaire">
           <GridOption id="proprietaire"  choix={propriety}  src={key} src_c={key_colorer} text_option="Proprietaire"/>
           </div>
           <div onClick={change} id="propietaire non occupant">
-          <GridOption id="propietaire non occupant" choix={propriety} src={propauc}  text_option="Propietaire non occupant"/>
+          <GridOption id="propietaire non occupant" choix={propriety} src={pno} src_c={pno_colorer}  text_option="Popietaire non occupant"/>
           </div>
           </div>
       </div> 

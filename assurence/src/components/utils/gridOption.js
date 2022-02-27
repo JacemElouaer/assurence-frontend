@@ -28,14 +28,14 @@ render(){
         { this.props.id ===this.props.choix ?  <img   src={this.props.src_c} alt="logo" className="h-100"  style={{ pointerEvents:"none" ,  opacity:"0.2"}}/>:
          <img   src={this.props.src} alt="logo" className="h-100"  style={{ pointerEvents:"none" }}/> }
       </div>:  undefined}
-      <div className="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans w-40" 
+      <div className="flex flex-col flex-wrap text-center max-w-full items-center justify-center mb-0.5  text-16 text-default-grey-400 font-sans w-40 h-12" 
       style={{ pointerEvents:"none"}}><p className="text-sm  font-bold text-[#444] text-4 option-text" style={{ pointerEvents:"none"}}>{this.props.text_option}</p></div>
   {this.props.src ? <div
-    className="absolute top-40 right-center     w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
+    className="absolute top-40 right-center     w-6 h-6 rounded-full mt-1" style =  {{display: "none" ,backgroundColor :  "#00a898"}}
      id={`check${this.props.id}`}>
     <DoneIcon   style={{ fill: '#e0dfda' }}  />
   </div> :  <div
-  className="absolute top-28 right-center    w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
+  className="absolute top-30 right-center    w-6 h-6 rounded-full " style =  {{display: "none" ,backgroundColor :  "#00a898"}}
    id={`check${this.props.id}`}>
   <DoneIcon   style={{ fill: '#e0dfda' }}  />
 </div>  }

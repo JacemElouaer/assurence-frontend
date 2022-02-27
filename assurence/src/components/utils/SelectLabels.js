@@ -15,15 +15,16 @@ export default function SelectLabels(props) {
   function  onchange(e){
    
    e.preventDefault() ;
+   
     if(e.target.value>month){
       props.setResDate(e.target.value ,  year)
     }
-   /*if(e.target.value==11){
-
-    }*/
     if(e.target.value<=month){
       props.setResDate(e.target.value ,  year+1)
     } 
+    if(e.target.value == 0){
+     props.setResDate(null ,null)
+   }
   }
  
   

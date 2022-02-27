@@ -84,7 +84,6 @@ function  senddata(e){
                   name="position"
                   defaultValue="top">
                   <FormControlLabel
-
                     value="Non"
                     control={<StyledRadio/>}
                     label="Nom"
