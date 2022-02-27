@@ -3,9 +3,9 @@ import React from 'react'
 function BaseIndex(props) {
   return (
     
-    <div className="space-y-2 w-full">  
+    <div className="space-y-2 w-full ">  
     <div className="mx-auto w-full md:w-900">
-      <div className='container w-4/5 justify-center mx-auto '>
+      <div className='container w-4/5 justify-center mx-auto mb-8 '>
         <h1 class=" text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans">
           {props.text} 
         </h1>

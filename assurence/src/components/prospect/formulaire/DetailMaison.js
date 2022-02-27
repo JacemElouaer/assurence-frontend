@@ -107,28 +107,29 @@ const changeSurface = (e)=>{
   return (
     <div className="mt-2">
       <div>
-      <div className="mx-auto w-full md:w-800  text-center pb-2">
+      <div className="mx-auto w-full md:w-800  text-center pb-2 pl-4 pr-4">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
-            Monsieur Marc est que  
-            <br />
-            vous pouvez nous fournir donner
-            Quelques détails sur votre Maison
+           
+             Pouvez-vous nous fournir <br/>donner
+            Quelques détails sur votre Maison?
           </p>
         </div>
       </div>
-      <main className="lg:mx-auto   pl-7 pr-7 ">
+      <div className="h-10"></div>
+      <main className="mx-auto   pl-7 pr-7 ">
       <div className="md:mb-2 mb-0">
-      <div className="flex items-center container  ">
+      <div className="flex justify-center mx-auto w-5/6 md:w-5/6">
         <DiscreteSliderMarks choix={choix}   choice_map={choice_map} valuesin={valuesin} change  = {changenbContruction}  default_value={construction}/>
       </div> 
     </div>
       </main> 
-      <div className="flex flex-col items-center mt-5">
+      <div className="h-8"></div>
+      <div className="flex flex-col items-center ">
       <label
           for="housing_rooms"
           className="mb-2.5" >
         
-          Surface de l'habitat{nbrpiece}
+          Surface de l'habitat
         </label>
          <div className="flex space-x-1 font-mono text-center ">
           
@@ -159,7 +160,7 @@ const changeSurface = (e)=>{
            
                 </div>
                 {nbrpiece ? 
-                <div className="mt-5 mr-5" onClick={senddata}>
+                <div className="mt-5 " onClick={senddata}>
             <Button Suivant="Dependance" />
                 </div> :
           <div>

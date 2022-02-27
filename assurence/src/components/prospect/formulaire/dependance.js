@@ -58,12 +58,16 @@ function  senddata(e){
   return (
    
             <div class=" mx-auto   w-full  md:w-800   " >
-              <div class="text-26 lg:text-32  text-center ">
-                <span >Il y a t-il des dépendances ?</span>
-              </div>
+              
               <div class=" text-13-18 lg:text-16-22 text-center mt-5 lg:mt-2.5 mb-5 lg:mb-10">
-                <div class="max-w-616 lg:px-0">
-                  Exemple : une remise, un garage, une cave séparée, etc.
+              <div className="mx-auto w-full md:w-800  text-center pb-2 pl-4 pr-4">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
+           Y a t-il des dépendances ?
+             </p>
+             <p className="text-xl xs:text-2xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full ">
+
+                  Par exemple : une remise, un garage, une cave séparée,...
+              </p>
                 </div>
               </div>
               <div class="md:mb-5 lg:mb-7">

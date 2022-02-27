@@ -42,14 +42,15 @@ function TypePropriete() {
   return (
     <div className="mt-5">
       <div className="">
-      <div className="mx-auto w-full md:w-600  text-center pb-5">
+      <div className="mx-auto w-full md:w-600  text-center ">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full  ">
             Etes-vous locataire ou propietaire ?
           </p>
         </div>
       </div>
+      <div className="h-8"></div>
       <div className="w-full flex justify-center ">
-          <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-7  ">
+          <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-7 mt-2 ">
             <div onClick={change} id="locataire">
           <GridOption   id="locataire"  choix={propriety} src={locataire} src_c={locataire_colorer} text_option="Locataire"/>
           </div>
@@ -61,6 +62,7 @@ function TypePropriete() {
           </div>
           </div>
       </div> 
+      <div class="h-8"></div>
       <div onClick={senddata}>
       {propriety === "propietaire non occupant" && data.type_habitat === "Appartement" ? 
       <Button Suivant="SpecificiteAppartement" />

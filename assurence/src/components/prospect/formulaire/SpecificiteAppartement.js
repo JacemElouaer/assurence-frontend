@@ -161,8 +161,9 @@ const changeSurface = (e)=>{
       
            
                 </div>
+        <div class="h-8"></div>
                 {etage ? 
-                <div className="mt-5 mr-5" onClick={senddata}>
+        <div className="mr-5" onClick={senddata}>
             <Button Suivant="Dependance" />
                 </div> :
           <div>

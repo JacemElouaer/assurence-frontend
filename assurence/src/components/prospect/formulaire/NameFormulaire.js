@@ -24,45 +24,38 @@ function NameFormulaire() {
     dispatch(saveGenaralInfo({nom, prenom})) ; 
   } 
   return (
-    <div className=  "">
+    <div >
       <div className="mx-auto w-full md:w-800  text-center pb-2">
         
-          <p className="text-xl xs:text-3xl md:text-4xl text-[#444]  text-center  font-sans lg:w-full mb-1">
+          <p className="pl-2 pr-2 text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full mb-1">
           Bonjour ! Je m’appelle Léa.
           </p>
             <br />
             <br />
-            <p className="text-xl xs:text-3xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full mb-10">
+            <p className=" pl-4 pr-4  text-xl xs:text-3xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full mb-10">
             Je vais vous créer un devis en quelques minutes. Prêt(e)  ?
           </p>
       </div>
-      <div className="mb-5 sm:mb-5 mt-2  mx-auto">
-        <div className="justify-center ">
-          <div className="container     place-items-center mx-auto grid grid-cols-1 sm:grid-cols-2   w-full sm:w-3/4 bg-black">
-            <div className="container  w-full sm:w-3/4  ">
+      <div className="container    mx-auto grid grid-cols-1 sm:grid-cols-2  gap-2 w-full ">
+            <div className="flex  justify-center   w-full ">
               <input
                 type="text"
-                className="form-control input-shape mb-2"
+                className="form-control input-shape w-full s:w-4/5"
                 id="inputPassword4"
                 placeholder="Prénom"
                 value={prenom}
-                onChange={(e)=>setPrenom(e.target.value)}
-
-              />
+                onChange={(e)=>setPrenom(e.target.value)}/>
             </div>
-            <div className=" container  w-full  sm:w-3/4" >
+            <div className=" flex  justify-center  w-full  " >
               <input
                 type="Nom"
-                className="input-shape "
+                className="input-shape w-full s:w-4/5"
                 id="inputEmail4"
                 placeholder="Nom"
                 value={nom}
-                onChange={(e)=>setNom(e.target.value)}
-              />
+                onChange={(e)=>setNom(e.target.value)} />
               
             </div>
-          </div>
-        </div>
       </div>
       <div className="flex justify-center mt-2 mb-5"> 
       {nom !=="" && prenom !==""? 

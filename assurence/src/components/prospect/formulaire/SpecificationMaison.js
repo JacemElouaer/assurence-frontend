@@ -45,15 +45,17 @@ function SpecificationMaison() {
  
 
 return (
-    <div className="space-y-5">
+    <div className="space-y-1">
       
       <div className="">
-        <div className='container'>
-          <p>
+      <div className="mx-auto w-full md:w-800  text-center pb-2 pl-4 pr-4">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
+           
             Parfait ! Vous souhaitez assurer
           </p>
         </div>
       </div>
+      <div className="h-8"></div>
       <div className="w-full flex justify-center ">
           <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-7  ">
             <div  id="Veranda" onClick={change} className="dblclick"  >
@@ -67,7 +69,7 @@ return (
           </div>
           </div>
       </div>
-
+  <div className="h-14"></div>
     {type_dependance  ?  <div onClick={senddata}>
     <Button Suivant="NombreSinistre" />
     </div>: 

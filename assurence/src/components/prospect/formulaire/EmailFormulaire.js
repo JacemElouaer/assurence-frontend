@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Button from "../../utils/Button";
 import {
   saveProgress,
-  saveProspectInfo,
   saveProspect
 } from "../../../redux/actions/formsData"; 
 import {save_prospect ,  save_devis} from  '../../../Apis/api' 
@@ -54,14 +53,16 @@ function EmailFormulaire() {
       <div class="">
       <div className="mx-auto w-full md:w-800  text-center pb-2">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
-            Bonjour ! Je m’appelle Léa.
-            <br />
+            Bonjour ! Je m’appelle Léa.</p>
+            <br />          
+            <p className="pl-4 pr-4 text-xl xs:text-2xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full ">
+
             Je vais vous créer un devis en quelques minutes. Prêt(e) ?.
           </p>
         </div>
       </div>
       <div className="w-full flex justify-center ">
-        <div className="grid grid-cols-1    gap-4 w-full  ">
+        <div className="grid grid-cols-1    gap-4 w-4/5  md:w-3/5 ">
           <div className="sm:pl-10 mt-4 ">
             <label for="exampleInputEmail1 pl--" className="">
               <p className="font-p  md:text-md text-sm ">

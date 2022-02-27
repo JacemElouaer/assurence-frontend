@@ -50,7 +50,7 @@ const FormulaireIndex = () => {
         <div className=" flex flex-row justify-between justify-content  mx-auto  ">
           <div className="w-full h-full">
             <div className="flex flex-col items-center justify-center py-1  ">
-              <div className="md:pt-20">
+              <div className="pt-8 md:pt-20">
                 <div className=" ">
                   <Routes>
                   <Route  path="Immeuble" element={<FormulaireImmeuble/>}> 

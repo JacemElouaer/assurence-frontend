@@ -21,11 +21,11 @@ const  senddata = (e) =>{
     <Form_grid text="Pouvez vous nous informer sur les dimensions de votre immeuble ?">
    
     <div class="flex flex-wrap gap-8  mb-4">
-        <div class="w-full md:w-60 ">
+        <div class="w-full sm:w-80 md:w-60 ">
       <label for="name" class="leading-7 text-s text-gray-600">Surface el m</label>
       <input onChange={changeSurface} type="number" placeholder="2500" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
       </div>
-      <div class="w-full md:w-60">
+      <div class="w-full  sm:w-80 md:w-60">
       <label for="name" class="leading-7 text-s text-gray-600">Nombre de lots </label>
       <input   onChange={changeLots} type="number" placeholder="15" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
       </div>

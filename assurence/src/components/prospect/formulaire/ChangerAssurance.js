@@ -3,7 +3,9 @@ import Button from "../../utils/Button";
 import GridbinaryOption from "../../utils/gridbinaryOption";  
 import {useDispatch , useSelector } from  'react-redux';
 import  {saveProgress} from '../../../redux/actions/formsData'
-import  {saveBesoinRes} from '../../../redux/actions/formsData' 
+import  {saveBesoinRes} from '../../../redux/actions/formsData'
+import GreenAlert from "../../utils/GreenAlert"; 
+
 function ChangerAssurance() { 
 
 let data =  useSelector(state => state.FormReducer)
@@ -50,13 +52,14 @@ let [besoinres ,  setChoix] =  useState(bbesoinres)
         </div>
         </div>
       </main>
+      <div class="h-16"></div>
       {besoinres==="demenage"?
-      <div class="mx-auto w-full md:w-800  text-center m-16">
-      <div class="shadow_box mt-8 text-16 text-default-grey-400 font-sans w-full" >
-        <p>Si vous déménagez, nous vous demanderons toutes les informations pour résilier votre ancienne assurance après avoir souscrit votre contrat HABITAT</p>
-
-      </div> </div>:
-    <div> </div>
+      
+       <GreenAlert header="Si vous déménagez"
+       body=" nous vous demanderons toutes les informations pour
+        résilier votre ancienne assurance après avoir souscrit
+         votre contrat HABITAT."/>:
+  undefined
     
     }
       <div class="mt-16" onClick={senddata}>

@@ -46,7 +46,8 @@ function Secondaireprincipale() {
         </p>
       </div>
     </div>
-    <main className="flex justify-center mt-5" >
+    <div className="h-8"></div>
+    <main className="flex justify-center" >
       <div className="grid grid-cols-1  2xs:grid-cols-2   s:grid-cols-2 gap-5 ">
       <div onClick={change} id="Principale"> 
         <GridOption id="Principale" text="type_1" choix={PropSecond} src={principale} src_c={principale_colorer} text_option="Principale"/>
@@ -55,8 +56,13 @@ function Secondaireprincipale() {
         <GridOption id="Secondaire" text="type_1" choix={PropSecond}  src={holiday}  src_c={holiday_colorer} text_option="Secondaire"/>
         </div>
       </div>
-    </main><div onClick={senddata}>
-    {type_habitat === "Appartement"? 
+    </main>
+    
+    <div class="h-8"></div>
+    <div onClick={senddata}>
+      {PropSecond ? <div>
+
+{type_habitat === "Appartement"? 
     
     <Button Suivant="SpecificiteAppartement"/>
     : undefined} 
@@ -64,6 +70,9 @@ function Secondaireprincipale() {
     
       <Button Suivant="DetailMaison"/>
       :  undefined}  
+
+      </div> :  undefined}
+    
   </div>      
 </div>
 )}

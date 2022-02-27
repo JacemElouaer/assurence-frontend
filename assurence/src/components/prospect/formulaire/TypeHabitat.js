@@ -52,15 +52,14 @@ function Typehabitat() {
 };
 
 return (
-    <div className="space-y-5">
+    <div className="mt-5">
       
-      <div className=  "">
-      <div className="mx-auto w-full md:w-800  text-center pb-2">
+      <div className="mx-auto w-full md:w-800  text-center ">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
             Parfait ! Vous souhaitez assurer
           </p>
         </div>
-      </div>
+        <div className="h-8"></div>
       <div className="w-full flex justify-center ">
           <div className="grid grid-cols-1  2xs:grid-cols-2 s:grid-cols-3 gap-4 md:gap-1  ">
             <div onClick={change} id="Appartement"  className="dblclick"  >
@@ -74,7 +73,7 @@ return (
           </div>
           </div>
       </div>
-
+      <div class="h-8"></div>
     {type_habitat ? 
     type_habitat === 'Immeuble' ? 
     <div onClick={senddata}>
