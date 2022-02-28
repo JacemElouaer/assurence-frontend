@@ -37,7 +37,7 @@ function Change(e){
 }
 
   return (
-    <div className=" w-full   mb-8 place-items-center xs:text-center mt-10">
+    <div className=" w-full   mb-8 place-items-center xs:text-center ">
       {window.innerWidth < 540 ? 
       <Box  className="w-full h-200">
       <Slider
@@ -51,7 +51,7 @@ function Change(e){
         style={{color :teal[400]  , fontSize : " 25px"}}
       />  
     </Box>:
-    <Box  className="w-full h-50">
+    <Box  className="w-full h-12">
       <Slider
         onChange={Change}
         default_value = {props.valuesin[props.default_value]}

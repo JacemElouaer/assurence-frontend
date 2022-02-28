@@ -5,13 +5,15 @@ function BaseIndex(props) {
     
     <div className="space-y-2 w-full ">  
     <div className="mx-auto w-full md:w-900">
-      <div className='container w-4/5 justify-center mx-auto mb-8 '>
-        <h1 class=" text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans">
+    <div className="mx-auto w-full md:w-800  text-center ">
+          <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  
+          text-center  font-sans lg:w-full "> 
           {props.text} 
-        </h1>
+        </p>
       </div>
     </div>
-    <div className="w-4/5 flex  mx-auto items-center ">
+    <div className="h-4"> </div>
+    <div className="w-full flex  mx-auto items-center ">
         {props.children}
     </div>
     </div>

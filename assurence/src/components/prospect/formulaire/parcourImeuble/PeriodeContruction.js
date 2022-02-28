@@ -64,10 +64,10 @@ function PeriodeContruction() {
   return (
       <div> 
     <Form_grid text="Quand l'immeuble a t-il été contstruit ?">
-    <div class=" mb-0">
-      <div class=" items-center mx-auto w-full p-4">
+    <div class=" mb-0 w-full">
+    <div class=" items-center mx-auto w-full pl-6 pr-6  md:w-700 ">
         <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
-      </div> 
+    </div> 
       
     </div><div>
      { periodeConst ? 

@@ -29,7 +29,8 @@ return (
        <GridOption id="HLM" choix={propriete } src={immeuble_xxlarge} src_c={immeuble_xxlarge_colorer}   text_option="HLM"/>
        </div>
        
- </Three_Option_Base>
+ </Three_Option_Base> 
+
  <div>
  {propriete ==="copropriété" ? 
        <div onClick={senddata}><Button Suivant="Immeuble/TypeCoprepriete" /></div>:

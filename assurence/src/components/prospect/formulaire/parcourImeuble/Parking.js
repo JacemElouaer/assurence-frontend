@@ -20,6 +20,7 @@ function Parking() {
       )}
        
     </Listopptions> 
+    <div className="h-6"></div>
     <div>
     {type_parking !== ""? 
           <div onClick={senddata}><Button Suivant="Immeuble/ImeubleProp" /></div>:  undefined} 

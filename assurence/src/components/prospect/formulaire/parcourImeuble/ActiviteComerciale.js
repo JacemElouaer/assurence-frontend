@@ -1,48 +1,75 @@
 import React  , {useState }from 'react'
 import Button  from  '../../../utils/Button'
+import ButtonError from '../../../utils/ButtonError'
+import MultiselectDropdown  from  '../../../utils/Multiselect'
+import InputTag  from  '../../../utils/InputTag'
 import Form_grid from './Grid_theme/Form_grid'
+import { getFormLabelUtilityClasses } from '@mui/material' 
+import DialogEmail from  '../../../utils/DialogEmail'
+
  function ActiviteComerciale() { 
   
 let choices  = ["Hotel" ,  "Musée" ,  "Bibliotèque" ,  "Ambassade" , "Lieu de culte" ,  ""]
-let  [surface , setSurface] =  useState("") 
-let  [Activite , setActivite] = useState([]) 
-const  changeSurface =(e)=>{
-  setSurface(e.target.value) 
-} 
-const  onSelect = (selectedList, selectedItem)=> {
-}
 
-const onRemove = (selectedList, removedItem) => {
+let  [Activite , setActivite] = useState([]) 
+let  [ChoixActivite ,  setActChoix] = useState('')
+
+
+const  changeActivity = (newtags)=>{ 
+ 
+  /*if(newtags.includes("Aucun des activité ci-dissous")){
+    newtags = ['Aucun des activité ci-dissous']
+  }*/
+  setActivite(newtags)
+}   
+
+const storeAct =  (val) =>{
+  setActChoix(val)
 }
-     
 const  senddata = (e) =>{
   console.log("hello")
 }
-const onChange = (event) => {
-  setActivite([...event.value]);
-};
-const selected = Activite.length;
+
+let Activite_non_couvre = 
+[
+  { label:  "Aucun des activité ci-dissous", value:  "Aucun des activité ci-dissous" },
+  { label:  'Toute activité du tTraité des Risques d entreprise  (TRE)', value:  'Toute activité du tTraité des Risques d entreprise  (TRE)'  },
+  { label:  'Un etaablissement de nuit (bar/ discothèque/ dancing/cabaret ...)', value:  'Un etaablissement de nuit (bar, discothèque, dancing,cabaret ...)'  },
+  { label:  'Hotel', value:  'Hotel'  },
+  { label:  'Musée', value:  'Musée'  },
+  { label:  'Bibliothèque', value:  'Bibliothèque'  },
+  { label:  'Ambassade', value:  'Ambassade'  },
+  { label:  'Une activité politique ou syndicale', value:  'Une activité politique ou syndicale'  },
+  { label:  'Lieu de Culte', value:  'Lieu de Culte'  },
+  { label:  "Brocanteur/ solderie/  Foir'fouille,dépot-vente ", value:  "Brocanteur/ solderie/Foir'fouille/dépot-vente"  },
+  { label:  "Parc stationnement publique", value:  "Parc stationnement publique"  },
+  { label:  "Stock de liquide inflammables (autres que pour le chauffage) en quantité supérieur à 500L,  ou 1000L pour le gaz", value:  "Stock de liquide inflammables (autres que pour le chauffage) en quantité supérieur à 500L,  ou 1000L pour le gaz"  },
+  { label:  "Professionnel de l'automobile (hors carrosseries et station-service)", value:  "Professionnel de l'automobile (hors carrosseries et station-service)"  },
+  { label:  "Travil mécanique du bois avec petit outillage à main", value:  "Travil mécanique du bois avec petit outillage à main"  }
+]
+
 
 
   return (
     <Form_grid>
         <div class="w-full max-w-lg">
       <label for="name" class="leading-7 text-s text-gray-600 "><p>Quelles sont vos activités commerciale ou professionnel </p></label>
-      <input onChange={changeSurface} type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+      <InputTag changeAct={changeActivity} tags={Activite}/>
       </div>
       <div class="w-full max-w-lg mt-4">
-      <label for="name" class="leading-7 text-sm text-gray-600 " ><p> Verifié vos activité ne font pas partis de la liste exhaistive des activités que nous ne couvrons pas </p> </label>
-
+      <label for="name" class="leading-7 text-sm text-gray-600 pb-1" ><p> Verifié vos activité ne font pas partis de la liste exhaistive des activités que nous ne couvrons pas </p> </label>
+      <MultiselectDropdown options={Activite_non_couvre} restoreAct={storeAct}/>
     </div>
     <div class="relative mb-4">
     </div>
-    <div class="relative mb-4">
-      
-      </div>
    
-    {Activite.length !== 0  && surface !== "" ? 
-          <div onClick={senddata}><Button Suivant="Immeuble/Occupation" /></div>:  
-          undefined
+    {Activite.length !== 0  && ChoixActivite !== "" ? 
+    
+      ChoixActivite.split(',').length!==1 ?
+    <DialogEmail/>:  
+      !ChoixActivite.includes('Aucun des activité ci-dissous')  ? 
+      <DialogEmail/> : <div onClick={senddata}><Button Suivant="Immeuble/Occupation" /></div>
+          :  undefined
       }
       </Form_grid>
 

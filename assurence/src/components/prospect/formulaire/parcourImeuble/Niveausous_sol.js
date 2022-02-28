@@ -23,6 +23,7 @@ const  senddata=(e)=>{
           <GridOption id="3 niveaux ou plus" choix={N_sous_sol } src={null}   text_option="3 niveaux ou plus"/>
           </div>
    </Three_Option_Base> 
+   <div className="h-8"></div>
    <div>
      { N_sous_sol ? 
           <div onClick={senddata}><Button Suivant="Immeuble/Parking" /></div>:  
