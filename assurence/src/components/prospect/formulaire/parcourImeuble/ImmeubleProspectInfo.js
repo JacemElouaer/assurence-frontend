@@ -1,8 +1,14 @@
 import React  , {useState }from 'react'
 import Button  from  '../../../utils/Button'
 import Form_grid from './Grid_theme/Form_grid'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_coordonner_client} from '../../../../redux/actions/ImmeubleData'
+
 
 function ImmeubleProspectInfo() { 
+
+
+  const dispatch =  useDispatch()
 
 let  [prenom , setPrenom] =  useState(undefined) 
 let  [nom , setNom] =  useState(undefined) 
@@ -22,7 +28,7 @@ const  changeTele =(e)=>{
   setTelephone(e.target.value)  
 }       
 const  senddata = (e) =>{
-  console.log("hello")
+  dispatch(save_coordonner_client({nom , prenom ,email ,  telephone }))
 }
 
 

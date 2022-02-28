@@ -2,13 +2,19 @@ import React  , {useState} from 'react'
 import  Three_Option_Base from  './Grid_theme/Three_Option_Base'
 import GridOption  from  "../../../utils/gridOption" 
 import Button from '../../../utils/Button' 
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_niveau_soussol} from '../../../../redux/actions/ImmeubleData'
+
 function Niveausous_sol() { 
+const dispatch = useDispatch()
 let [N_sous_sol ,  setNive] =  useState(0)
   const change= (e)=> {
       setNive(e.target.id)
 };
 const  senddata=(e)=>{
-  e.preventDefault();
+  e.preventDefault(); 
+  dispatch(save_niveau_soussol(N_sous_sol))
+
 }
   return (
     <div>

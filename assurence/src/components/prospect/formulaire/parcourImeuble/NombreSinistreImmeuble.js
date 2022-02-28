@@ -1,6 +1,10 @@
 import React  , {useState , useEffect} from 'react'
 import Form_grid from  './Grid_theme/Form_grid'
 import Button from '../../../utils/Button'
+import DialogEmail  from  '../../../utils/DialogEmail'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_nbr_sinistre} from '../../../../redux/actions/ImmeubleData'
+
 
 import DiscreteSliderMarks from "../../../utils/DiscreteSliderMarks"
 
@@ -16,34 +20,17 @@ let  choice_map = {
   66 :  "Deux", 
   100 :  "Trois ou plus"
 }
-
-
 function NombreSinistreImmeuble() {
-    const  senddata = ()=>{
+  const  dispatch =  useDispatch()
 
-    }
+   
 
-   /* useEffect(() => {
-      dispatch(saveProgress(65))
-   }, []);*/
  
-   /*const data   =  useSelector(state => state.FormReducer)
- const dispatch =  useDispatch()*/
- 
- let [periodeConst , setPeriode] = useState("byvy")
- let [show ,  setShow]=  useState(false)
- 
-
+ let [nbr_sinistre , setPeriode] = useState("Aucun")
  const changenbsinistre= (value) =>{
-  setPeriode(periodeConst = value)
- 
-   if(value==="Apres 2011"){
-     setShow(true);
-   }
-   else {
-     setShow(false);
-   }
+  setPeriode(nbr_sinistre = value) 
  }
+
  let choix= [
   { value: 0,
     label:"Aucun"
@@ -61,17 +48,25 @@ function NombreSinistreImmeuble() {
     label: 'Trois ou plus',
   },
 ];
-    
+
+const  senddata = (e)=>{
+  e.preventDefault(); 
+  dispatch(save_nbr_sinistre(nbr_sinistre))
+  }
+
+
   return (
       <div> 
     <Form_grid text="Combien de sinistre avez-vous eu au cours des 3 dernière années ?"  >
-    <div class="md:mb-1 mb-0">
-      <div class=" items-center mx-auto w-full p-8">
-        <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
+    <div class="md:mb-1 mb-0 w-full">
+      <div class=" items-center mx-auto w-full md:w-700 p-8">
+        <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={nbr_sinistre}/>
       </div> 
       
     </div><div>
-     { periodeConst ? 
+     { nbr_sinistre ? 
+     nbr_sinistre === "Trois ou plus" ?  
+     <DialogEmail/> : 
           <div onClick={senddata}><Button Suivant="Immeuble/TypeEntreprise" /></div>:  
           undefined
        }

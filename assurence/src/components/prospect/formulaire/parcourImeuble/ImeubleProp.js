@@ -8,13 +8,19 @@ import coprop_colorer from  '../../../../assets/image_finale/coprop_colorer.png'
 import immeuble_xxlarge from  '../../../../assets/image_finale/immeuble_xxlarge.png'
 import immeuble_xxlarge_colorer from  '../../../../assets/image_finale/immeuble_xxlarge_colorer.png'
 import Button from '../../../utils/Button';
-function ImeubleProp() {
-  let [propriete ,  setType] =  useState("")
-  const change= (e)=> {
-     setType(e.target.id)
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_propriete} from '../../../../redux/actions/ImmeubleData'
+import DialogEmail  from  "../../../utils/DialogEmail"
+
+function ImeubleProp() { 
+const dispatch = useDispatch()
+let [propriete ,  setType] =  useState("")
+const change= (e)=> {
+setType(e.target.id)
  }; 
- const  senddata =()=>{
-   
+ const  senddata =(e)=>{
+      e.preventDefault();
+      dispatch(save_propriete(propriete))
  }
 return (
  <div>
@@ -32,10 +38,14 @@ return (
  </Three_Option_Base> 
 
  <div>
- {propriete ==="copropriété" ? 
+{propriete ?
+
+ propriete ==="copropriété" ? 
        <div onClick={senddata}><Button Suivant="Immeuble/TypeCoprepriete" /></div>:
+       propriete === 'HLM'? <DialogEmail/>:
        <div onClick={senddata}><Button Suivant="Immeuble/TypeImmeuble" /></div>
-        } 
+       : undefined
+      }
    </div>
 </div>
 )

@@ -8,6 +8,8 @@ import  habitation from  '../../../../assets/image_finale/habitation.png'
 import  habitation_colorer from  '../../../../assets/image_finale/habitation_colorer.png'
 import  commerciale from  '../../../../assets/image_finale/commerciale.png'
 import  commerciale_colorer from  '../../../../assets/image_finale/commerciale_colorer.png'
+import { save_usage } from '../../../../redux/actions/ImmeubleData'
+
 var  Usage_immeuble = []
 function UsageImmeuble() { 
   
@@ -20,6 +22,7 @@ function UsageImmeuble() {
   
   const senddata = (e)=>{
     e.preventDefault() ;
+    dispatch(save_usage(Usage))
   }
 
   function change(e) {
@@ -48,6 +51,7 @@ function UsageImmeuble() {
           </div>
     </Two_Option_Base>
     <div>
+      <div className='h-8'></div>
     {Usage.length !==0 ? 
         Usage.includes("commerciale/professionnel") ?  
         Usage.length > 1?  

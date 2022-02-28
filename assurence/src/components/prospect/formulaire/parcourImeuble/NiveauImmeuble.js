@@ -9,14 +9,20 @@ import immeuble_large_colorer from  '../../../../assets/image_finale/immeuble_la
 import immeuble_large from  '../../../../assets/image_finale/immeuble_large.png'
 import immeuble_xxlarge from  '../../../../assets/image_finale/immeuble_xxlarge.png'
 import immeuble_xxlarge_colorer from  '../../../../assets/image_finale/immeuble_xxlarge_colorer.png'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_niveau_immeuble} from '../../../../redux/actions/ImmeubleData'
 
 function NiveauImmeuble() { 
+  const dispatch = useDispatch()
     let [niveau_immeuble ,  setType] =  useState("5 niveaux ou moins")
     const change= (e)=> {
         setType(e.target.id)
     };
     console.log(niveau_immeuble)
-    const  senddata =(e)=>{}
+    const  senddata =(e)=>{
+      e.preventDefault() ; 
+      dispatch(save_niveau_immeuble(niveau_immeuble))
+    }
   return (
     <div> 
     <Three_Option_Base text="Combien de niveaux comporte votre immeuble ? ">

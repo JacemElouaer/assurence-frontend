@@ -2,15 +2,19 @@ import React  ,  {useState } from 'react'
 import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridOption  from  "../../../utils/gridOption" 
 import Button  from "../../../utils/Button";
- 
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_copropriete} from '../../../../redux/actions/ImmeubleData'
+
    
 function TypeCoprepriété() {
-     let [nature_immeuble ,  setType] =  useState("")
-     const change= (e)=> {
+    const dispatch =useDispatch()
+    let [nature_immeuble ,  setType] =  useState("")
+    const change= (e)=> {
         setType(e.target.id)
     }; 
-    const  senddata =()=>{
-      
+    const  senddata =(e)=>{
+      e.preventDefault(); 
+      dispatch(save_copropriete(nature_immeuble))
     }
   return (
     <div>

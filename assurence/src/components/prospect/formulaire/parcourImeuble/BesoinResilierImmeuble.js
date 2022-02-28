@@ -3,12 +3,12 @@ import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"  
 import  { useDispatch , useSelector} from  'react-redux'
 import Button from  '../../../utils/Button'
+import {save_resiliation} from '../../../../redux/actions/ImmeubleData'
+
 function BesoinResilierImmeuble() { 
   
   let  bresilier =  "oui"
-/*  if(data.resiliation !=="") {
-    bresiliation =  data.resiliation ===false ?  "non"  :  "oui" 
-   }*/
+
 
   const dispatch =  useDispatch()
   let [Resilier ,  setResilier] =  useState(bresilier)  
@@ -22,7 +22,9 @@ function BesoinResilierImmeuble() {
         setResilier("non")
     }
  }; 
- const  senddata = ()=>{
+ const  senddata = (e)=>{
+  e.preventDefault();
+  dispatch(save_resiliation(Resilier))
 
  }
  

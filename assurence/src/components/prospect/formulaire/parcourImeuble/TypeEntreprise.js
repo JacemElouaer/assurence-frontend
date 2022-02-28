@@ -2,7 +2,11 @@ import React  ,  {useState} from 'react'
 import Listopptions from  './Grid_theme/Listopptions' 
 import ListitemOption from '../../../utils/listitemOption'
 import Button from '../../../utils/Button'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_type_entreprise} from '../../../../redux/actions/ImmeubleData'
+
 function TypeEntreprise() { 
+  const dispatch =  useDispatch()
    
   let [type_entreprise, setParking]= useState("") 
   let entreprise_list_options = [ "Un particulier " ,  "Une SCI" ,"Une ASL / une AFULL"  , "Un syndic bénévole" ,"Un syndic professionnel" ,"un membre du conseil syndical" , "Une SAS / une SARL "  ]
@@ -10,7 +14,11 @@ function TypeEntreprise() {
     setParking(type_entreprise= e.target.id)
   };
    
-  const senddata = (e)=>{}
+  const senddata = (e)=>{
+    e.preventDefault() ; 
+    dispatch(save_type_entreprise(type_entreprise))
+  }
+
   
    return ( 
     <div>

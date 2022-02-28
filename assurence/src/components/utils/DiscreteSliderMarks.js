@@ -11,20 +11,13 @@ export default function DiscreteSliderMarks(props) {
 
  
   let [deviceWidth  ,  setDeviceWidth] = useState(window.innerWidth) 
-  let [orientation , setOrientation] = useState("vertical") 
   console.log(deviceWidth)
 
 useEffect((deviceWidth)=>{
   function handleResize()
   {
     setDeviceWidth(window.innerWidth)
-    if(deviceWidth < 540){
-      setOrientation("verticale")
-    }
-    else
-    {
-      setOrientation("horizontal")
-  }}
+   }
   window.addEventListener('resize', handleResize)
 
     return _ => {

@@ -29,7 +29,9 @@ switch (action.type) {
     case INFO_IMMEUBLE : 
     return {
         ...state,
-        
+        surface  :  action.info_immeuble.surface ,
+        Nlots  :  action.info_immeuble.Nlots 
+
     }
     case NIVEAUX_IMMEBLE : 
     return {
@@ -89,7 +91,8 @@ switch (action.type) {
     case SPECIFICATION_ACTIVITE  : 
     return {
         ...state,
-        specification_activite  :  action.specification_activite
+        Activite :  action.specification_activite.Activite , 
+        ChoixActivite :  action.specification_activite.ChoixActivite 
     }
     case OCCUPATION : 
     return {
@@ -124,7 +127,7 @@ switch (action.type) {
     case ASSURANCE : 
     return {
         ...state,
-        assurence  :  action.assurence
+        Actuallement_assurer  :  action.assurence
     }
     case RESILIATION: 
     return {

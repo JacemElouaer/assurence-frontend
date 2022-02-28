@@ -1,14 +1,15 @@
 import React  , {useState }from 'react'
 import Button  from  '../../../utils/Button'
-import ButtonError from '../../../utils/ButtonError'
 import MultiselectDropdown  from  '../../../utils/Multiselect'
 import InputTag  from  '../../../utils/InputTag'
 import Form_grid from './Grid_theme/Form_grid'
-import { getFormLabelUtilityClasses } from '@mui/material' 
 import DialogEmail from  '../../../utils/DialogEmail'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_specification_activite} from '../../../../redux/actions/ImmeubleData'
 
  function ActiviteComerciale() { 
-  
+
+  const dispatch =  useDispatch()
 let choices  = ["Hotel" ,  "Musée" ,  "Bibliotèque" ,  "Ambassade" , "Lieu de culte" ,  ""]
 
 let  [Activite , setActivite] = useState([]) 
@@ -16,18 +17,13 @@ let  [ChoixActivite ,  setActChoix] = useState('')
 
 
 const  changeActivity = (newtags)=>{ 
- 
-  /*if(newtags.includes("Aucun des activité ci-dissous")){
-    newtags = ['Aucun des activité ci-dissous']
-  }*/
   setActivite(newtags)
 }   
-
 const storeAct =  (val) =>{
   setActChoix(val)
 }
 const  senddata = (e) =>{
-  console.log("hello")
+  dispatch(save_specification_activite({Activite , ChoixActivite}))
 }
 
 let Activite_non_couvre = 

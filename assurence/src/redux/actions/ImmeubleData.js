@@ -48,7 +48,7 @@ export function save_parking (parking){
 
 }
 } 
-export function nama (propriete){
+export function save_propriete (propriete){
     return {
         type : "TYPE_PROPRIETE",
         propriete
@@ -114,7 +114,7 @@ export function save_specification_activite (specification_activite){
 } 
 export function save_occupation (occupation){
     return {
-        type :  "SPECIFICATION_ACTIVITE",
+        type :  "OCCUPATION",
         occupation
 
     }
@@ -123,7 +123,6 @@ export function  save_tauxOccupation(tauxOccupation){
     return {
         type : "TAUX_OCCUPATION",
         tauxOccupation
-
     }
 }
 export function save_nbr_sinistre (nbr_sinistre){

@@ -1,8 +1,11 @@
 import React  , {useState }from 'react'
 import Button  from  '../../../utils/Button'
 import Form_grid from './Grid_theme/Form_grid'
+import {save_info_immeuble} from '../../../../redux/actions/ImmeubleData'
+import {useDispatch} from 'react-redux'
 
 function ImmeubleGeneralinfo() { 
+const dispatch = useDispatch()
 
 let  [surface , setSurface] =  useState("") 
 let  [Nlots , setNlots] =  useState("") 
@@ -13,13 +16,12 @@ const  changeLots =(e)=>{
   setNlots(e.target.value) 
 }       
 const  senddata = (e) =>{
-  console.log("hello")
+  dispatch(save_info_immeuble({surface,Nlots}))
 }
 
 
   return (
     <Form_grid text="Pouvez vous nous informer sur les dimensions de votre immeuble ?">
-   
     <div class="flex flex-wrap gap-8  mb-4">
         <div class="w-full sm:w-80 md:w-60 ">
       <label for="name" class="leading-7 text-s text-gray-600">Surface el m</label>

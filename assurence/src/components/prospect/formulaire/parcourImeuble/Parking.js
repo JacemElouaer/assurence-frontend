@@ -2,15 +2,22 @@ import React  ,  {useState} from 'react'
 import Listopptions from  './Grid_theme/Listopptions' 
 import ListitemOption from '../../../utils/listitemOption'
 import Button from '../../../utils/Button'
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_parking} from '../../../../redux/actions/ImmeubleData'
+
 function Parking() { 
+  const dispatch = useDispatch()
    
   let [type_parking, setParking]= useState("") 
-  let parking_list_options = [ "Pad de parking " ,  "Place de parking" ,"Place de parking et box"  , "Box fermé"]
+  let parking_list_options = [ "Pas de parking " ,  "Place de parking" ,"Place de parking et box"  , "Box fermé"]
   const change= (e)=> {
     setParking(type_parking= e.target.id)
   };
    
-  const senddata = (e)=>{}
+  const senddata = (e)=>{
+    e.preventDefault() ;
+    dispatch(save_parking(type_parking))
+  }
   
    return ( 
     <div>

@@ -9,6 +9,7 @@ import  escalier from  '../../../../assets/image_finale/escalier.png'
 import  escalier_colore from  '../../../../assets/image_finale/escalier_colore.png'
 import  Rsignaler from  '../../../../assets/image_finale/Rsignaler.png'
 import  Rsignaler_colorer from  '../../../../assets/image_finale/Rsignaler_colorer.png'
+import {save_installation} from '../../../../redux/actions/ImmeubleData'
 
 
 var  install_depandance = ["ecalier ou placher en boix"]
@@ -21,6 +22,7 @@ function InstallationImeuble() {
   
   const senddata = (e)=>{
     e.preventDefault() ;
+    dispatch(save_installation(installation))
   }
 
  

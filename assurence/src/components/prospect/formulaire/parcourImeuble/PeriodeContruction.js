@@ -1,7 +1,8 @@
 import React  , {useState } from 'react'
 import Form_grid from  './Grid_theme/Form_grid'
 import Button from '../../../utils/Button'
-
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_date_construction} from '../../../../redux/actions/ImmeubleData'
 import DiscreteSliderMarks from "../../../utils/DiscreteSliderMarks"
 
 let  valuesin = {
@@ -18,30 +19,13 @@ let  choice_map = {
 }
 
 function PeriodeContruction() {
-    const  senddata = ()=>{
 
-    }
-
-   /* useEffect(() => {
-      dispatch(saveProgress(65))
-   }, []);*/
- 
-   /*const data   =  useSelector(state => state.FormReducer)
- const dispatch =  useDispatch()*/
- 
- let [periodeConst , setPeriode] = useState("byvy")
- let [show ,  setShow]=  useState(false)
+ const dispatch  =  useDispatch()
+ let [periodeConst , setPeriode] = useState("Avant 1900")
  
 
- const changenbsinistre= (value) =>{
+ const changePeriode= (value) =>{
   setPeriode(periodeConst = value)
- 
-   if(value==="Apres 2011"){
-     setShow(true);
-   }
-   else {
-     setShow(false);
-   }
  }
    let choix= [
      { value: 0,
@@ -60,13 +44,18 @@ function PeriodeContruction() {
        label: 'Trois ou plus',
      },
    ];
-    
+
+    const  senddata = (e)=>{
+      e.preventDefault();
+      dispatch(save_date_construction(periodeConst))
+
+    }
   return (
       <div> 
     <Form_grid text="Quand l'immeuble a t-il été contstruit ?">
     <div class=" mb-0 w-full">
     <div class=" items-center mx-auto w-full pl-6 pr-6  md:w-700 ">
-        <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
+        <DiscreteSliderMarks choix={choix}   change  = {changePeriode} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>
     </div> 
       
     </div><div>

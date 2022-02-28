@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Button from "../../../utils/Button";
 import Form_grid from "./Grid_theme/Form_grid";
+import  { useDispatch , useSelector} from  'react-redux'
+import {save_date_assemble} from '../../../../redux/actions/ImmeubleData'
+
 
 function DateAssembleGenerale() {
+  const dispatch =  useDispatch()
   let [Date, setDate] = useState(undefined);
 
   const changeDate = (e) => {
@@ -10,7 +14,7 @@ function DateAssembleGenerale() {
   };
  
   const senddata = (e) => {
-    console.log("hello");
+    dispatch(save_date_assemble(Date))
   };
 
   return (

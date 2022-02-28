@@ -2,7 +2,9 @@ import React  ,  {useState} from 'react'
 import Two_Option_Base from './Grid_theme/Two_Option_Base'
 import GridbinaryOption  from  "../../../utils/gridbinaryOption"  
 import  { useDispatch , useSelector} from  'react-redux'
+import {save_assurence} from '../../../../redux/actions/ImmeubleData'
 import Button from '../../../utils/Button'
+
 function ActuellmentAssure() { 
   
   let  boccupation =  "oui"
@@ -22,8 +24,9 @@ function ActuellmentAssure() {
       setAssure("non")
     }
  };
- const  senddata =()=>{
-
+ const  senddata =(e)=>{
+  e.preventDefault();
+  dispatch(save_assurence(assure))
  }
  
   return (
