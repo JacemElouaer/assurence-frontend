@@ -14,8 +14,10 @@ SAVE_MAISON_DETAIL,
 SAVE_BESOIN_RES,
 SAVE_RESOLUTION_PERI,
 SAVE_PROSPECTINFO, 
-SAVE_PROSPECT
+SAVE_PROSPECT,
+RESET_REDUCER
 } from '../actions/formsData'
+const  defaultState= {}
 
 const  FormReducer = (state = {} ,  action)=> {
     switch(action.type){ 
@@ -97,12 +99,14 @@ const  FormReducer = (state = {} ,  action)=> {
             ResiliationP : action.ResiliationP
         } 
         case SAVE_PROSPECTINFO: 
-        console.log("step2")
         return  {
             ...state,
             email : action.prospect,  
 
         }
+        case RESET_REDUCER :  
+        return  {
+            }
         default: 
         return  state 
     

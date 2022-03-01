@@ -36,6 +36,8 @@ export function  format_devis_maison(id , data_devis) {
   console.log("this is verif" ,  data_devis)
 return {
     id :  id  ,  
+    adresse :  data_devis.adresse.adresse,
+    complement :  data_devis.adresse.Complement , 
     email_prospect: data_devis.email, 
     besoin_resiliation:data_devis.resiliation , 
     type_residence:data_devis.PropSecond , 
@@ -68,6 +70,8 @@ export function  format_devis_apartement(id , data_devis) {
   
 return {
     id :  id  ,  
+    adresse :  data_devis.adresse.adresse,
+    complement :  data_devis.adresse.Complement , 
     email_prospect: data_devis.email, 
     besoin_resiliation:data_devis.resiliation , 
     type_residence:data_devis.PropSecond , 
@@ -90,3 +94,36 @@ return {
 
 }
 
+export function  format_devis_immeuble(id , data_devis , data_immeuble) {  
+  console.log("this is verif" ,  data_devis)
+return {
+    id :  id  ,  
+    adresse :  data_devis.adresse , 
+    complement :  data_devis.complement , 
+    surface_immeuble:data_immeuble.surface,
+    nombre_lots:data_immeuble.Nlots,
+    Niveau_immeuble:data_immeuble.niveau_immeuble,
+    Niveau_sous_sol:data_immeuble.niveau_soussol,
+    Parking:data_immeuble.parking,
+    type_propriete:data_immeuble.propriete,
+    type_copropriete:data_immeuble.copropriete,
+    type_batiment:data_immeuble.type_immeuble,
+    periode_construction:data_immeuble.date_construction,
+    installation:data_immeuble.installations,
+    traveaux:data_immeuble.traveaux,
+    usage_immeuble:data_immeuble.usage,
+    activite_commerciale:data_immeuble.Activite,
+    occupation:data_immeuble.occupation,
+    taux_proprietaire:data_immeuble.tauxOccupation,
+    nbr_sinistre:data_immeuble.nbr_sinistre,
+    type_entreprise:data_immeuble.type_entreprise,
+    date_assemblee:data_immeuble.date_assemblee,
+    ancien_assurence:data_immeuble.Actuallement_assurer,
+    resiliation:data_immeuble.resiliation,
+    email_prospect:data_immeuble.coordonner_client.email
+  }
+
+
+    /*surface immeuble occupe par commerce */ 
+
+}

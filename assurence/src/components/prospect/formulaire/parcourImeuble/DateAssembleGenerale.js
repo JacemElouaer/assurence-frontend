@@ -3,13 +3,30 @@ import Button from "../../../utils/Button";
 import Form_grid from "./Grid_theme/Form_grid";
 import  { useDispatch , useSelector} from  'react-redux'
 import {save_date_assemble} from '../../../../redux/actions/ImmeubleData'
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 
 function DateAssembleGenerale() {
-  const dispatch =  useDispatch()
-  let [Date, setDate] = useState(undefined);
 
-  const changeDate = (e) => {
+
+  
+  const dispatch =  useDispatch()
+  let [DateAssembler, setDate] = React.useState(new Date());
+
+  const handleChange = (newValue) => {
+    setDate(newValue);
+  };
+let minDate = new Date()
+let maxDate = new Date()
+maxDate.setDate(minDate.getDay()+730) 
+
+console.log(minDate ,"this is " , maxDate)
+
+const changeDate = (e) => {
     setDate(e.target.value);
   };
  
@@ -25,35 +42,27 @@ function DateAssembleGenerale() {
         </div>
         <div class="flex justify-center mx-auto w-full">
           <div class="mb-3 xl:w-96 ">
-            <select
-              class="form-select appearance-none
-      block
-      w-full
-      px-3
-      py-1.5
-      text-base
-      font-normal
-      text-gray-700
-      bg-white bg-clip-padding bg-no-repeat
-      border border-solid border-gray-300
-      rounded
-      transition
-      ease-in-out
-      m-0
-      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              aria-label="Default select example"  onChange={changeDate}
-            >
-              <option selected>Choisir votre date </option>
-              <option value="1">1/3/2022</option>
-              <option value="2">1/3/2022</option>
-              <option value="3">1/3/2022</option>
-            </select>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <Stack>
+              <MobileDatePicker
+              placeholder="La date de votre porchaine assemblée"
+              minDate={minDate}
+              maxDate={maxDate}
+              value={DateAssembler}
+              onChange={handleChange}
+              inputFormat="dd/MM/yyyy"
+              renderInput={(params) => <TextField {...params} />}
+                          
+              />
+            </Stack>
+          </LocalizationProvider>
           </div>
         </div>
       </div>
 
-      {Date? (
+      {DateAssembler? (
         <div onClick={senddata}>
+          
           <Button Suivant="Immeuble/ActuellmentAssure" />
         </div>
       ) : undefined}

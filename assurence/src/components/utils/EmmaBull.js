@@ -2,8 +2,11 @@ import React from 'react'
 
 function EmmaBull() {
   return (
-    <div className="relative  md:h-16 h1:6  w-full">
-    <div className="rounded-full  md:-top-10  md:-left-16 bg-gray-500 md:h-16 md:w-16  relative container mx-auto md:float-left md:absolute  h-14 w-14 justify-center text-center ">
+    <div className="relative  h:16  w-full">
+    <div className="rounded-full   bg-gray-500
+    md:h-20 md:w-20 z-40 md:top-6   transition-all md:transition-all duration-500
+    
+    relative container mx-auto    h-14 w-14  top-1 justify-center text-center ">
         <img />
       </div>
       </div>

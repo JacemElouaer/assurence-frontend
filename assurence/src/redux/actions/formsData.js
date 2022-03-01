@@ -14,6 +14,7 @@ export const  SAVE_PROSPECTINFO = "SAVE_PROSPECTINFO"
 export const  SAVE_BESOIN_RES =  "SAVE_BESOIN_RES"
 export const  SAVE_RESOLUTION_PERI = "SAVE_RESOLUTION_PERI" 
 export const  SAVE_PROSPECT =  "SAVE_PROSPECT";  
+export const  RESET_REDUCER = "RESET_REDUCER"; 
 
 
 export function saveAdress(adresse){
@@ -119,5 +120,11 @@ export function  saveResiliationPeriode(ResiliationP){
     return  {
         type :  "SAVE_RESOLUTION_PERI",
         ResiliationP
+    }
+}
+
+export function  ResetRedux(){
+    return  {
+        type :  "RESET_REDUCER",
     }
 }
