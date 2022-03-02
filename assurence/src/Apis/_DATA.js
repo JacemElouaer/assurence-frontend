@@ -94,32 +94,49 @@ return {
 
 }
 
-export function  format_devis_immeuble(id , data_devis , data_immeuble) {  
-  console.log("this is verif" ,  data_devis)
+export function  format_devis_immeuble(id , Adresse , data_immeuble) {  
+  
+  let activites =  data_immeuble.Activite ? data_immeuble.Activite  :  null
+  let copropriete = null 
+  if  (!data_immeuble.copropriete || data_immeuble.propriete == "monopropriété") {
+    copropriete =   null  }else{ 
+      copropriete = data_immeuble.copropriete 
+    }
+  
+  
+  
+  let actuallement_assurer = data_immeuble.Actuallement_assurer =="oui" ? true :  false
+  let resilier  = data_immeuble.resiliation == "oui"?  true : false  
+  let tOccupation =  data_immeuble.tauxOccupation == "oui" ?  true :  false
+  console.log("this is " , id)
+  console.log(data_immeuble.Activite )
+
 return {
     id :  id  ,  
-    adresse :  data_devis.adresse , 
-    complement :  data_devis.complement , 
+    adresse :  Adresse.adresse , 
+    complement :  Adresse.Complement , 
     surface_immeuble:data_immeuble.surface,
     nombre_lots:data_immeuble.Nlots,
     Niveau_immeuble:data_immeuble.niveau_immeuble,
     Niveau_sous_sol:data_immeuble.niveau_soussol,
     Parking:data_immeuble.parking,
     type_propriete:data_immeuble.propriete,
-    type_copropriete:data_immeuble.copropriete,
+    type_copropriete:copropriete,
     type_batiment:data_immeuble.type_immeuble,
     periode_construction:data_immeuble.date_construction,
     installation:data_immeuble.installations,
     traveaux:data_immeuble.traveaux,
     usage_immeuble:data_immeuble.usage,
-    activite_commerciale:data_immeuble.Activite,
+    activite_commerciale:activites,
     occupation:data_immeuble.occupation,
-    taux_proprietaire:data_immeuble.tauxOccupation,
+    taux_proprietaire:tOccupation,
     nbr_sinistre:data_immeuble.nbr_sinistre,
     type_entreprise:data_immeuble.type_entreprise,
-    date_assemblee:data_immeuble.date_assemblee,
-    ancien_assurence:data_immeuble.Actuallement_assurer,
-    resiliation:data_immeuble.resiliation,
+    date_assemblee:data_immeuble.date_assemble,
+    ancien_assurence:actuallement_assurer,
+    resiliation:resilier,
+    Tarification:0,
+    franchise:0,
     email_prospect:data_immeuble.coordonner_client.email
   }
 

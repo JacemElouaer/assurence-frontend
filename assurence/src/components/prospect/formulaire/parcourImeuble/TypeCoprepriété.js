@@ -7,8 +7,10 @@ import {save_copropriete} from '../../../../redux/actions/ImmeubleData'
 
    
 function TypeCoprepriété() {
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bcopropriete = data.copropriete ?  data.copropriete :  "" ; 
     const dispatch =useDispatch()
-    let [nature_immeuble ,  setType] =  useState("")
+    let [nature_immeuble ,  setType] =  useState(bcopropriete)
     const change= (e)=> {
         setType(e.target.id)
     }; 
@@ -26,6 +28,7 @@ function TypeCoprepriété() {
           <GridOption id="horizontale"  choix={nature_immeuble } src={"null"} text_option="Copropriété horizontale"/>
           </div>          
     </Two_Option_Base>
+    <div className="h-8"></div>
     <div>
     {nature_immeuble !=="" ? 
           <div onClick={senddata}><Button Suivant="Immeuble/TypeImmeuble" /></div>: 

@@ -12,13 +12,13 @@ import  Rsignaler_colorer from  '../../../../assets/image_finale/Rsignaler_color
 import {save_installation} from '../../../../redux/actions/ImmeubleData'
 
 
-var  install_depandance = ["ecalier ou placher en boix"]
+var  install_depandance =[]
 function InstallationImeuble() { 
-  
-  const data =  useSelector(state => state.FormReducer)
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  binstallation = data.installations ?  data.installations :  []; 
   const dispatch =  useDispatch()  
   let [counter, setCounter]= useState(0) 
-  let [installation, setChoix]= useState(install_depandance) 
+  let [installation, setChoix]= useState(binstallation) 
   
   const senddata = (e)=>{
     e.preventDefault() ;
@@ -49,7 +49,7 @@ function InstallationImeuble() {
  
   return (
     <div>
-    <Three_Option_Base text="Combien de niveaux sous sols comporte  votre immeuble">
+    <Three_Option_Base text="Votre immeuble est-il équipé de certaines de ces installations ? ">
           <div  id="Escalier ou planche en bois" onClick={change} className="dblclick"  >
           <GridMultipleOption  counter={counter} id="Escalier ou planche en bois"  choix={installation} src_c={escalier_colore} src={escalier}    text_option="Escalier ou plachier en bois "/>
           </div>

@@ -14,7 +14,10 @@ import {save_niveau_immeuble} from '../../../../redux/actions/ImmeubleData'
 
 function NiveauImmeuble() { 
   const dispatch = useDispatch()
-    let [niveau_immeuble ,  setType] =  useState("5 niveaux ou moins")
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bniveau_immeuble = data.niveau_immeuble ?  data.niveau_immeuble :  "" ; 
+
+    let [niveau_immeuble ,  setType] =  useState(bniveau_immeuble)
     const change= (e)=> {
         setType(e.target.id)
     };

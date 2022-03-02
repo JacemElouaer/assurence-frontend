@@ -6,14 +6,15 @@ import {save_assurence} from '../../../../redux/actions/ImmeubleData'
 import Button from '../../../utils/Button'
 
 function ActuellmentAssure() { 
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
   
-  let  boccupation =  "oui"
+  let  bassurer =  data.Actuallement_assurer  ? data.Actuallement_assurer : ""
 /*  if(data.resiliation !=="") {
     bresiliation =  data.resiliation ===false ?  "non"  :  "oui" 
    }*/
 
   const dispatch =  useDispatch()
-  let [assure ,  setAssure] =  useState(boccupation)  
+  let [assure ,  setAssure] =  useState(bassurer)  
 
  const change= (e)=> {
    

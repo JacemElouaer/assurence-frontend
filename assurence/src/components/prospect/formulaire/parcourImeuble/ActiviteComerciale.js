@@ -8,12 +8,12 @@ import  { useDispatch , useSelector} from  'react-redux'
 import {save_specification_activite} from '../../../../redux/actions/ImmeubleData'
 
  function ActiviteComerciale() { 
-
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
   const dispatch =  useDispatch()
-let choices  = ["Hotel" ,  "Musée" ,  "Bibliotèque" ,  "Ambassade" , "Lieu de culte" ,  ""]
-
-let  [Activite , setActivite] = useState([]) 
-let  [ChoixActivite ,  setActChoix] = useState('')
+let  bActivite =  data.Activite ? data.Activite  :  []   
+let  bChoixActivite  = data.ChoixActivite ? data.ChoixActivite  :  [] 
+let  [Activite , setActivite] = useState(bActivite) 
+let  [ChoixActivite ,  setActChoix] = useState(bChoixActivite)
 
 
 const  changeActivity = (newtags)=>{ 
@@ -49,11 +49,11 @@ let Activite_non_couvre =
   return (
     <Form_grid>
         <div class="w-full max-w-lg">
-      <label for="name" class="leading-7 text-s text-gray-600 "><p>Quelles sont vos activités commerciale ou professionnel </p></label>
+      <label for="name" class="leading-7 text-xl text-gray-600 "><p>Quelles sont vos activités commerciale ou professionnel </p></label>
       <InputTag changeAct={changeActivity} tags={Activite}/>
       </div>
       <div class="w-full max-w-lg mt-4">
-      <label for="name" class="leading-7 text-sm text-gray-600 pb-1" ><p> Verifié vos activité ne font pas partis de la liste exhaistive des activités que nous ne couvrons pas </p> </label>
+      <label for="name" class="leading-7 text-xl text-gray-600 pb-1" ><p> Verifié vos activité ne font pas partis de la liste exhaistive des activités que nous ne couvrons pas </p> </label>
       <MultiselectDropdown options={Activite_non_couvre} restoreAct={storeAct}/>
     </div>
     <div class="relative mb-4">

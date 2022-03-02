@@ -12,11 +12,11 @@ import { save_usage } from '../../../../redux/actions/ImmeubleData'
 
 var  Usage_immeuble = []
 function UsageImmeuble() { 
-  
-  const data =  useSelector(state => state.FormReducer)
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bUsage = data.usage ?  data.usage :  []; 
   const dispatch =  useDispatch()  
   
-  let [Usage, setUsage]= useState(Usage_immeuble)
+  let [Usage, setUsage]= useState(bUsage)
   let [counter, setCounter]= useState(0) 
 
   

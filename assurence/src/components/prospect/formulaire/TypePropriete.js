@@ -3,8 +3,6 @@ import Button from "../../utils/Button";
 import GridOption from "../../utils/gridOption";  
 import {useSelector , useDispatch} from "react-redux"  
 import {saveproprietyChoice} from '../../../redux/actions/formsData'
-import contart from  '../../../assets/images/contrat.svg'
-import propauc from  '../../../assets/images/propauc.svg';  
 import key from  '../../../assets/image_finale/key.png'
 import key_colorer from  '../../../assets/image_finale/key_colorer.png'
 import locataire_colorer from  '../../../assets/image_finale/locataire_colorer.png'
@@ -28,14 +26,7 @@ function TypePropriete() {
 
 
  const change= (e)=> {
-     if(e.target.id === "locataire"){
-       setChoix("locataire")}
-    if(e.target.id ===  "proprietaire"){
-      setChoix("proprietaire")} 
-    if (e.target.id ===  "propietaire non occupant"){
-      setChoix("propietaire non occupant")
-    } 
-   
+      setChoix(e.target.id) 
  };
 
   
@@ -44,7 +35,7 @@ function TypePropriete() {
       <div className="">
       <div className="mx-auto w-full md:w-600  text-center ">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full  ">
-            Etes-vous locataire ou propietaire ?
+            Etes-vous locataire , propietaire ou  ?
           </p>
         </div>
       </div>
@@ -57,8 +48,8 @@ function TypePropriete() {
           <div onClick={change} id="proprietaire">
           <GridOption id="proprietaire"  choix={propriety}  src={key} src_c={key_colorer} text_option="Proprietaire"/>
           </div>
-          <div onClick={change} id="propietaire non occupant">
-          <GridOption id="propietaire non occupant" choix={propriety} src={pno} src_c={pno_colorer}  text_option="Popietaire non occupant"/>
+          <div onClick={change} id="proprietaire non occupant">
+          <GridOption id="proprietaire non occupant" choix={propriety} src={pno} src_c={pno_colorer}  text_option="Proprietaire non occupant"/>
           </div>
           </div>
       </div> 

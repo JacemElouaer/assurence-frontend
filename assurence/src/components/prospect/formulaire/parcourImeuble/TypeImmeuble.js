@@ -13,8 +13,10 @@ import  { useDispatch , useSelector} from  'react-redux'
 import {save_type_immeuble} from '../../../../redux/actions/ImmeubleData'
 
 function TypeImmeuble() { 
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+let  btype_immeuble = data.type_immeuble ?  data.type_immeuble :  "" ; 
   const dispatch = useDispatch()
-    let [type_immeuble ,  setType] =  useState("stading")
+    let [type_immeuble ,  setType] =  useState(btype_immeuble)
     const change= (e)=> {
         setType(e.target.id)
     };
@@ -24,7 +26,7 @@ function TypeImmeuble() {
     }
   return (
     <div>
-    <Three_Option_Base text="Combien de niveaux sous sols comporte ">
+    <Three_Option_Base text="L'immeuble est un bâtiment : ">
          <div onClick={change} id="stading"    >
           <GridOption   id="stading"  choix={type_immeuble } src={standing} src_c={standing_colorer}    text_option="De stading"/>
           </div>

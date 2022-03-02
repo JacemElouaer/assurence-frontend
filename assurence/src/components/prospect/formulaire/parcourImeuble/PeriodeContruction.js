@@ -9,19 +9,21 @@ let  valuesin = {
   "Avant 1900": 0,  
   "Entre 1900 et 1950" : 33 , 
   "Entre 1951 et 2011" : 66  , 
-  "Apres 2011" :  1000
+  "Aprés 2011" :  100
 }
 let  choice_map = {
   0 : "Avant 1900",  
   33 :  "Entre 1900 et 1950", 
   66 :  "Entre 1951 et 2011", 
-  100 :  "Apres 2011"
+  100 :  "Aprés 2011"
 }
 
 function PeriodeContruction() {
+const data   =  useSelector(state => state.ImmeubleFormReducer)
+let  bdate_construction = data.date_construction ?  data.date_construction :  "" ; 
 
  const dispatch  =  useDispatch()
- let [periodeConst , setPeriode] = useState("Avant 1900")
+ let [periodeConst , setPeriode] = useState(bdate_construction)
  
 
  const changePeriode= (value) =>{
@@ -41,7 +43,7 @@ function PeriodeContruction() {
      },
      {
        value: 100,
-       label: 'Trois ou plus',
+       label: 'Aprés 2011',
      },
    ];
 
@@ -52,7 +54,7 @@ function PeriodeContruction() {
     }
   return (
       <div> 
-    <Form_grid text="Quand l'immeuble a t-il été contstruit ?">
+    <Form_grid text="Quand l'immeuble a t-il été  construit?">
     <div class=" mb-0 w-full">
     <div class=" items-center mx-auto w-full pl-6 pr-6  md:w-700 ">
         <DiscreteSliderMarks choix={choix}   change  = {changePeriode} choice_map={choice_map} valuesin={valuesin}  default_value={periodeConst}/>

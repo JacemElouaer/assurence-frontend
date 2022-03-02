@@ -14,11 +14,11 @@ import {save_traveaux} from '../../../../redux/actions/ImmeubleData'
 
 var  install_depandance = []
 function TravauxRenovation() { 
-  
-  const data =  useSelector(state => state.FormReducer)
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bTraveaux = data.traveaux ?  data.traveaux :  []; 
   const dispatch =  useDispatch()  
   let [counter, setCounter]= useState(0) 
-  let [Traveaux, setTravaux]= useState(install_depandance) 
+  let [Traveaux, setTravaux]= useState(bTraveaux) 
   
   const senddata = (e)=>{
     e.preventDefault() ;

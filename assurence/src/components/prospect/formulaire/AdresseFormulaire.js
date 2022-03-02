@@ -13,6 +13,7 @@ function AdresseFormulaire() {
      dispatch(saveProgress(15))
   }, []);
 
+  
 
   const data   =  useSelector(state => state.FormReducer)
   let badresse = data.adresse ? data.adresse.adresse : "";
@@ -30,11 +31,11 @@ function AdresseFormulaire() {
     <div className=  "">
       <div className="mx-auto w-full md:w-800  text-center pb-2">
           <p className="text-xl xs:text-3xl md:text-5xl text-[#444]  text-center  font-sans lg:w-full ">
-          Bonjour  {data.generalinfo.prenom } !</p>
+          Salut  {data.generalinfo.prenom } !</p>
             <br/>
             <br/>
             <p className="text-xl xs:text-2xl md:text-3xl text-[#444]  text-center  font-sans lg:w-full ">
-            Je vais vous créer un devis en quelques minutes. Prêt(e) ?.</p>
+            Pouvez-vous me donner votre l'adresse de votre habitat ?</p>
           
         </div>
         <div className="form-group container  place-items-center mx-auto grid grid-cols-1 md:grid-cols-8   w-full md:w-6/7 mt-16">

@@ -21,12 +21,13 @@ let  choice_map = {
   100 :  "Trois ou plus"
 }
 function NombreSinistreImmeuble() {
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
   const  dispatch =  useDispatch()
 
    
 
  
- let [nbr_sinistre , setPeriode] = useState("Aucun")
+ let [nbr_sinistre , setPeriode] = useState(data.nbr_sinistre)
  const changenbsinistre= (value) =>{
   setPeriode(nbr_sinistre = value) 
  }
@@ -57,7 +58,7 @@ const  senddata = (e)=>{
 
   return (
       <div> 
-    <Form_grid text="Combien de sinistre avez-vous eu au cours des 3 dernière années ?"  >
+    <Form_grid text="Combien de sinistre avez-vous eu au cours des 3 dernières années ?"  >
     <div class="md:mb-1 mb-0 w-full">
       <div class=" items-center mx-auto w-full md:w-700 p-8">
         <DiscreteSliderMarks choix={choix}   change  = {changenbsinistre} choice_map={choice_map} valuesin={valuesin}  default_value={nbr_sinistre}/>

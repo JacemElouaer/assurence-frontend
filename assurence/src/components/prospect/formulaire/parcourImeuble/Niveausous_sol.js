@@ -6,8 +6,10 @@ import  { useDispatch , useSelector} from  'react-redux'
 import {save_niveau_soussol} from '../../../../redux/actions/ImmeubleData'
 
 function Niveausous_sol() { 
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bN_sous_sol = data.niveau_soussol ?  data.niveau_soussol :  "" ; 
 const dispatch = useDispatch()
-let [N_sous_sol ,  setNive] =  useState(0)
+let [N_sous_sol ,  setNive] =  useState(bN_sous_sol)
   const change= (e)=> {
       setNive(e.target.id)
 };
@@ -18,7 +20,7 @@ const  senddata=(e)=>{
 }
   return (
     <div>
-    <Three_Option_Base text ="Combien de niveaux sous sols comporte votre immeuble ? ">
+    <Three_Option_Base text ="Combien de niveaux en sous-sols comporte votre immeuble ? ">
         <div onClick={change} id="Aucun"  className="dblclick"  >
           <GridOption   id="Aucun"  choix={N_sous_sol } src={null}    text_option="Aucun"/>
           </div>
@@ -29,7 +31,7 @@ const  senddata=(e)=>{
           <GridOption id="3 niveaux ou plus" choix={N_sous_sol } src={null}   text_option="3 niveaux ou plus"/>
           </div>
    </Three_Option_Base> 
-   <div className="h-8"></div>
+   <div className="h-6"></div>
    <div>
      { N_sous_sol ? 
           <div onClick={senddata}><Button Suivant="Immeuble/Parking" /></div>:  

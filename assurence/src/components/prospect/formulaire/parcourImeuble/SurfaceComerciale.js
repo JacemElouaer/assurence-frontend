@@ -12,10 +12,10 @@ import {save_surface_commerce} from '../../../../redux/actions/ImmeubleData'
 
 function SurfaceComerciale() { 
   
-  const data =  useSelector(state => state.FormReducer)
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  bsurface_commerce = data.surface_commerce ?  data.surface_commerce : ""; 
   const dispatch =  useDispatch()  
-  
-  let [Surface_C, setSurfaceCommerciale]= useState(0) 
+  let [Surface_C, setSurfaceCommerciale]= useState(bsurface_commerce) 
   
   const senddata = (e)=>{
     e.preventDefault() ; 

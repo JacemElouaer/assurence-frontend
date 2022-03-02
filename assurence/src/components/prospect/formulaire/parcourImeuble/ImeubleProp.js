@@ -13,8 +13,11 @@ import {save_propriete} from '../../../../redux/actions/ImmeubleData'
 import DialogEmail  from  "../../../utils/DialogEmail"
 
 function ImeubleProp() { 
+const data   =  useSelector(state => state.ImmeubleFormReducer)
+let  bpropriete = data.propriete ?  data.propriete :  "" ; 
+
 const dispatch = useDispatch()
-let [propriete ,  setType] =  useState("")
+let [propriete ,  setType] =  useState(bpropriete)
 const change= (e)=> {
 setType(e.target.id)
  }; 
@@ -24,7 +27,7 @@ setType(e.target.id)
  }
 return (
  <div>
- <Three_Option_Base text="Alors ,  votre immeuble est considerer comme  ?  ">
+ <Three_Option_Base text="Vous souhaitez assurer un immeuble:  ">
       <div onClick={change} id="monopropriété">
        <GridOption   id="monopropriété"  choix={propriete } src={mono} src_c={mono_colorer}    text_option="En monopropriété"/>
        </div>

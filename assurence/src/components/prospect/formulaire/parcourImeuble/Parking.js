@@ -7,8 +7,11 @@ import {save_parking} from '../../../../redux/actions/ImmeubleData'
 
 function Parking() { 
   const dispatch = useDispatch()
-   
-  let [type_parking, setParking]= useState("") 
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  let  btype_parking = data.parking ?  data.parking :  "" ; 
+
+  let [type_parking, setParking]= useState(btype_parking) 
+  
   let parking_list_options = [ "Pas de parking " ,  "Place de parking" ,"Place de parking et box"  , "Box fermé"]
   const change= (e)=> {
     setParking(type_parking= e.target.id)

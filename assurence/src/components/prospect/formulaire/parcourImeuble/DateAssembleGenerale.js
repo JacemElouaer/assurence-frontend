@@ -11,11 +11,11 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 
 function DateAssembleGenerale() {
-
-
-  
+  const data   =  useSelector(state => state.ImmeubleFormReducer)
+  var date_part =  data.date_assemble.split('/')
+  let bDateAssembler =  data.date_assemble ?  new Date(date_part[0] ,date_part[1] ,date_part[2] ) : new Date() ;  
   const dispatch =  useDispatch()
-  let [DateAssembler, setDate] = React.useState(new Date());
+  let [DateAssembler, setDate] = React.useState(bDateAssembler);
 
   const handleChange = (newValue) => {
     setDate(newValue);
@@ -31,7 +31,7 @@ const changeDate = (e) => {
   };
  
   const senddata = (e) => {
-    dispatch(save_date_assemble(Date))
+    dispatch(save_date_assemble(DateAssembler.toLocaleDateString("fr")))
   };
 
   return (

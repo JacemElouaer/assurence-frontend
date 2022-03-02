@@ -9,12 +9,11 @@ import {save_tauxOccupation} from '../../../../redux/actions/ImmeubleData'
 
 function PourcentagePropreitaire() {
    
-    
+    const data   =  useSelector(state => state.ImmeubleFormReducer)
+    let bpourcentage =  data.tauxOccupation ? data.tauxOccupation :  ""
    
      const dispatch =  useDispatch()
-     let [pourcentage ,  setPourc] =  useState("oui")  
-     
-   
+     let [pourcentage ,  setPourc] =  useState(bpourcentage)  
     const change= (e)=> {
       
         if (e.target.id === "oui"){
